@@ -1,19 +1,32 @@
 [gd_scene format=3 uid="uid://c8c80wb6phwa7"]
 
 [ext_resource type="Texture2D" uid="uid://cgktpwp68hr3e" path="res://imagenes/castelli/castelli_adelante.png" id="1_2c1cp"]
-[ext_resource type="Texture2D" uid="uid://c5yfg81etxmtj" path="res://imagenes/castelli/castelli_izquierda/iz1.png" id="2_xclkm"]
-[ext_resource type="Texture2D" uid="uid://dbdf034dq3kvo" path="res://imagenes/castelli/castelli_izquierda/iz6.png" id="3_12ejt"]
-[ext_resource type="Texture2D" uid="uid://ijqjybfhfmaf" path="res://imagenes/castelli/castelli_izquierda/iz7.png" id="4_i1xwm"]
-[ext_resource type="Texture2D" uid="uid://buatp83dndxn8" path="res://imagenes/castelli/castelli_izquierda/iz8.png" id="5_owi52"]
-[ext_resource type="Texture2D" uid="uid://dhipj1xyp3xeg" path="res://imagenes/castelli/castelli_izquierda/iz9.png" id="6_0dc0k"]
-[ext_resource type="Texture2D" uid="uid://dccngp1mfslcu" path="res://imagenes/castelli/castelli_izquierda/iz10.png" id="7_cfisc"]
-[ext_resource type="Texture2D" uid="uid://daw1ywfjcxgou" path="res://imagenes/castelli/castelli_izquierda/iz11.png" id="8_6dlp6"]
-[ext_resource type="Texture2D" uid="uid://xeuwi220y3aq" path="res://imagenes/castelli/castelli_izquierda/iz12.png" id="9_155u3"]
-[ext_resource type="Texture2D" uid="uid://fakpqit6jagc" path="res://imagenes/castelli/castelli_izquierda/iz13.png" id="10_t53qh"]
-[ext_resource type="Texture2D" uid="uid://bt3feeh3klku1" path="res://imagenes/castelli/castelli_izquierda/iz14.png" id="11_kryx6"]
-[ext_resource type="Texture2D" uid="uid://dcsb6j2yuojo7" path="res://imagenes/castelli/castelli_izquierda/iz15.png" id="12_wo8tg"]
-[ext_resource type="Texture2D" uid="uid://dpa2uqiknt68j" path="res://imagenes/castelli/castelli_izquierda/iz16.png" id="13_mxo4q"]
-[ext_resource type="Texture2D" uid="uid://d1vxgurvofrb" path="res://imagenes/castelli/castelli_izquierda/iz17.png" id="14_s8vl1"]
+[ext_resource type="Texture2D" uid="uid://b8m22nwgomvyl" path="res://imagenes/castelli/movimientos/derecha/d1.png" id="2_s8vl1"]
+[ext_resource type="Texture2D" uid="uid://c5yfg81etxmtj" path="res://imagenes/castelli/movimientos/izquierda/iz1.png" id="2_xclkm"]
+[ext_resource type="Texture2D" uid="uid://dbdf034dq3kvo" path="res://imagenes/castelli/movimientos/izquierda/iz6.png" id="3_12ejt"]
+[ext_resource type="Texture2D" uid="uid://bie81hfmh56e5" path="res://imagenes/castelli/movimientos/derecha/d2.png" id="3_v2j16"]
+[ext_resource type="Texture2D" uid="uid://ijqjybfhfmaf" path="res://imagenes/castelli/movimientos/izquierda/iz7.png" id="4_i1xwm"]
+[ext_resource type="Texture2D" uid="uid://ba6u3fc13h6md" path="res://imagenes/castelli/movimientos/derecha/d3.png" id="4_kbkev"]
+[ext_resource type="Texture2D" uid="uid://dchj3j7pstnr3" path="res://imagenes/castelli/movimientos/derecha/d4.png" id="5_2370v"]
+[ext_resource type="Texture2D" uid="uid://buatp83dndxn8" path="res://imagenes/castelli/movimientos/izquierda/iz8.png" id="5_owi52"]
+[ext_resource type="Texture2D" uid="uid://dhipj1xyp3xeg" path="res://imagenes/castelli/movimientos/izquierda/iz9.png" id="6_0dc0k"]
+[ext_resource type="Texture2D" uid="uid://ct7q3xxxp2ync" path="res://imagenes/castelli/movimientos/derecha/d5.png" id="6_l20er"]
+[ext_resource type="Texture2D" uid="uid://dccngp1mfslcu" path="res://imagenes/castelli/movimientos/izquierda/iz10.png" id="7_cfisc"]
+[ext_resource type="Texture2D" uid="uid://j5r6rfds8wna" path="res://imagenes/castelli/movimientos/derecha/d6.png" id="7_ppp0o"]
+[ext_resource type="Texture2D" uid="uid://daw1ywfjcxgou" path="res://imagenes/castelli/movimientos/izquierda/iz11.png" id="8_6dlp6"]
+[ext_resource type="Texture2D" uid="uid://xhs18wvsxeoi" path="res://imagenes/castelli/movimientos/derecha/d7.png" id="8_lssm2"]
+[ext_resource type="Texture2D" uid="uid://xeuwi220y3aq" path="res://imagenes/castelli/movimientos/izquierda/iz12.png" id="9_155u3"]
+[ext_resource type="Texture2D" uid="uid://vuk3gq4miabb" path="res://imagenes/castelli/movimientos/derecha/d8.png" id="9_vqxq1"]
+[ext_resource type="Texture2D" uid="uid://dl1iqxp7iw407" path="res://imagenes/castelli/movimientos/derecha/d9.png" id="10_musrp"]
+[ext_resource type="Texture2D" uid="uid://fakpqit6jagc" path="res://imagenes/castelli/movimientos/izquierda/iz13.png" id="10_t53qh"]
+[ext_resource type="Texture2D" uid="uid://bt3feeh3klku1" path="res://imagenes/castelli/movimientos/izquierda/iz14.png" id="11_kryx6"]
+[ext_resource type="Texture2D" uid="uid://ispsgsp5sxaq" path="res://imagenes/castelli/movimientos/derecha/d10.png" id="11_lodqf"]
+[ext_resource type="Texture2D" uid="uid://buwvolpavhanc" path="res://imagenes/castelli/movimientos/derecha/d11.png" id="12_g6as5"]
+[ext_resource type="Texture2D" uid="uid://dcsb6j2yuojo7" path="res://imagenes/castelli/movimientos/izquierda/iz15.png" id="12_wo8tg"]
+[ext_resource type="Texture2D" uid="uid://c0pfofb1xwos0" path="res://imagenes/castelli/movimientos/derecha/d12.png" id="13_15m38"]
+[ext_resource type="Texture2D" uid="uid://dpa2uqiknt68j" path="res://imagenes/castelli/movimientos/izquierda/iz16.png" id="13_mxo4q"]
+[ext_resource type="Texture2D" uid="uid://cyttnjlh2yskw" path="res://imagenes/castelli/movimientos/derecha/d13.png" id="14_fdqdk"]
+[ext_resource type="Texture2D" uid="uid://d1vxgurvofrb" path="res://imagenes/castelli/movimientos/izquierda/iz17.png" id="14_s8vl1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kco76"]
 size = Vector2(164, 271)
@@ -122,9 +135,9 @@ tracks/3/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_2370v"]
-resource_name = "caminar_izquierda"
-length = 1.7333333
+[sub_resource type="Animation" id="Animation_dtixb"]
+resource_name = "caminar_derecha"
+length = 1.75
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -133,10 +146,27 @@ tracks/0/path = NodePath("../Castelli:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.03333334, 0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8, 0.93333334, 1.0666667, 1.2, 1.3333334, 1.4666667, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.13333333, 0.26666665, 0.39999998, 0.53333336, 0.6666667, 0.8, 0.93333334, 1.0666667, 1.2, 1.3333334, 1.4666667, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("2_xclkm"), ExtResource("2_xclkm"), ExtResource("3_12ejt"), ExtResource("4_i1xwm"), ExtResource("5_owi52"), ExtResource("6_0dc0k"), ExtResource("7_cfisc"), ExtResource("8_6dlp6"), ExtResource("9_155u3"), ExtResource("10_t53qh"), ExtResource("11_kryx6"), ExtResource("12_wo8tg"), ExtResource("13_mxo4q"), ExtResource("14_s8vl1")]
+"values": [ExtResource("2_s8vl1"), ExtResource("3_v2j16"), ExtResource("4_kbkev"), ExtResource("5_2370v"), ExtResource("6_l20er"), ExtResource("7_ppp0o"), ExtResource("8_lssm2"), ExtResource("9_vqxq1"), ExtResource("10_musrp"), ExtResource("11_lodqf"), ExtResource("12_g6as5"), ExtResource("13_15m38"), ExtResource("14_fdqdk")]
+}
+
+[sub_resource type="Animation" id="Animation_2370v"]
+resource_name = "caminar_izquierda"
+length = 1.75
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Castelli:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8, 0.93333334, 1.0666667, 1.2, 1.3333334, 1.4666667, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_xclkm"), ExtResource("3_12ejt"), ExtResource("4_i1xwm"), ExtResource("5_owi52"), ExtResource("6_0dc0k"), ExtResource("7_cfisc"), ExtResource("8_6dlp6"), ExtResource("9_155u3"), ExtResource("10_t53qh"), ExtResource("11_kryx6"), ExtResource("12_wo8tg"), ExtResource("13_mxo4q"), ExtResource("14_s8vl1")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -155,6 +185,7 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_v2j16"),
 &"caminar_adelante": SubResource("Animation_kbkev"),
+&"caminar_derecha": SubResource("Animation_dtixb"),
 &"caminar_izquierda": SubResource("Animation_2370v")
 }
 
