@@ -1,20 +1,28 @@
 [gd_scene format=3 uid="uid://c8c80wb6phwa7"]
 
-[ext_resource type="Texture2D" uid="uid://cgktpwp68hr3e" path="res://imagenes/castelli/castelli_adelante.png" id="1_2c1cp"]
+[ext_resource type="Texture2D" uid="uid://bkiq52sfplgvp" path="res://imagenes/castelli/parado.png" id="1_musrp"]
+[ext_resource type="Texture2D" uid="uid://csoligvd6px2d" path="res://imagenes/castelli/movimientos/abajo/ab1.png" id="2_l20er"]
 [ext_resource type="Texture2D" uid="uid://b8m22nwgomvyl" path="res://imagenes/castelli/movimientos/derecha/d1.png" id="2_s8vl1"]
 [ext_resource type="Texture2D" uid="uid://c5yfg81etxmtj" path="res://imagenes/castelli/movimientos/izquierda/iz1.png" id="2_xclkm"]
 [ext_resource type="Texture2D" uid="uid://dbdf034dq3kvo" path="res://imagenes/castelli/movimientos/izquierda/iz6.png" id="3_12ejt"]
+[ext_resource type="Texture2D" uid="uid://b4umt7hql7bdy" path="res://imagenes/castelli/movimientos/abajo/ab2.png" id="3_ppp0o"]
 [ext_resource type="Texture2D" uid="uid://bie81hfmh56e5" path="res://imagenes/castelli/movimientos/derecha/d2.png" id="3_v2j16"]
 [ext_resource type="Texture2D" uid="uid://ijqjybfhfmaf" path="res://imagenes/castelli/movimientos/izquierda/iz7.png" id="4_i1xwm"]
 [ext_resource type="Texture2D" uid="uid://ba6u3fc13h6md" path="res://imagenes/castelli/movimientos/derecha/d3.png" id="4_kbkev"]
+[ext_resource type="Texture2D" uid="uid://csycdb7nasvhv" path="res://imagenes/castelli/movimientos/abajo/ab3.png" id="4_lssm2"]
 [ext_resource type="Texture2D" uid="uid://dchj3j7pstnr3" path="res://imagenes/castelli/movimientos/derecha/d4.png" id="5_2370v"]
 [ext_resource type="Texture2D" uid="uid://buatp83dndxn8" path="res://imagenes/castelli/movimientos/izquierda/iz8.png" id="5_owi52"]
+[ext_resource type="Texture2D" uid="uid://cxw53vak1pxmf" path="res://imagenes/castelli/movimientos/abajo/ab6.png" id="5_vqxq1"]
 [ext_resource type="Texture2D" uid="uid://dhipj1xyp3xeg" path="res://imagenes/castelli/movimientos/izquierda/iz9.png" id="6_0dc0k"]
 [ext_resource type="Texture2D" uid="uid://ct7q3xxxp2ync" path="res://imagenes/castelli/movimientos/derecha/d5.png" id="6_l20er"]
+[ext_resource type="Texture2D" uid="uid://cjtwebfeq03t7" path="res://imagenes/castelli/movimientos/arriba/ar1.png" id="6_musrp"]
 [ext_resource type="Texture2D" uid="uid://dccngp1mfslcu" path="res://imagenes/castelli/movimientos/izquierda/iz10.png" id="7_cfisc"]
+[ext_resource type="Texture2D" uid="uid://v7jdqvem1sua" path="res://imagenes/castelli/movimientos/arriba/ar11.png" id="7_lodqf"]
 [ext_resource type="Texture2D" uid="uid://j5r6rfds8wna" path="res://imagenes/castelli/movimientos/derecha/d6.png" id="7_ppp0o"]
 [ext_resource type="Texture2D" uid="uid://daw1ywfjcxgou" path="res://imagenes/castelli/movimientos/izquierda/iz11.png" id="8_6dlp6"]
+[ext_resource type="Texture2D" uid="uid://cyjo1j8iurulq" path="res://imagenes/castelli/movimientos/arriba/ar2.png" id="8_g6as5"]
 [ext_resource type="Texture2D" uid="uid://xhs18wvsxeoi" path="res://imagenes/castelli/movimientos/derecha/d7.png" id="8_lssm2"]
+[ext_resource type="Texture2D" uid="uid://wygti2h683hj" path="res://imagenes/castelli/movimientos/arriba/ar10.png" id="9_15m38"]
 [ext_resource type="Texture2D" uid="uid://xeuwi220y3aq" path="res://imagenes/castelli/movimientos/izquierda/iz12.png" id="9_155u3"]
 [ext_resource type="Texture2D" uid="uid://vuk3gq4miabb" path="res://imagenes/castelli/movimientos/derecha/d8.png" id="9_vqxq1"]
 [ext_resource type="Texture2D" uid="uid://dl1iqxp7iw407" path="res://imagenes/castelli/movimientos/derecha/d9.png" id="10_musrp"]
@@ -29,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://d1vxgurvofrb" path="res://imagenes/castelli/movimientos/izquierda/iz17.png" id="14_s8vl1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kco76"]
-size = Vector2(164, 271)
+size = Vector2(148, 271)
 
 [sub_resource type="Animation" id="Animation_v2j16"]
 length = 0.001
@@ -43,7 +51,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_2c1cp")]
+"values": [ExtResource("1_musrp")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -52,30 +60,6 @@ tracks/1/path = NodePath("../Castelli:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Castelli:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Castelli:vframes")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -84,7 +68,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_kbkev"]
 resource_name = "caminar_adelante"
-length = 1.0333333
+length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -93,10 +77,10 @@ tracks/0/path = NodePath("../Castelli:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_2c1cp")]
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("2_l20er"), ExtResource("3_ppp0o"), ExtResource("4_lssm2"), ExtResource("5_vqxq1")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -107,31 +91,36 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
+"update": 0,
+"values": [1]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Castelli:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5, 0.6666667, 0.8333333, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [3, 2, 1, 0, 1, 2, 3]
+
+[sub_resource type="Animation" id="Animation_fdqdk"]
+resource_name = "caminar_arriba"
+length = 0.6666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Castelli:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("6_musrp"), ExtResource("8_g6as5"), ExtResource("7_lodqf"), ExtResource("9_15m38")]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Castelli:vframes")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Castelli:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [1]
 }
 
@@ -148,25 +137,8 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.13333333, 0.26666665, 0.39999998, 0.53333336, 0.6666667, 0.8, 0.93333334, 1.0666667, 1.2, 1.3333334, 1.4666667, 1.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [ExtResource("2_s8vl1"), ExtResource("3_v2j16"), ExtResource("4_kbkev"), ExtResource("5_2370v"), ExtResource("6_l20er"), ExtResource("7_ppp0o"), ExtResource("8_lssm2"), ExtResource("9_vqxq1"), ExtResource("10_musrp"), ExtResource("11_lodqf"), ExtResource("12_g6as5"), ExtResource("13_15m38"), ExtResource("14_fdqdk")]
-}
-
-[sub_resource type="Animation" id="Animation_2370v"]
-resource_name = "caminar_izquierda"
-length = 1.75
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Castelli:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8, 0.93333334, 1.0666667, 1.2, 1.3333334, 1.4666667, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_xclkm"), ExtResource("3_12ejt"), ExtResource("4_i1xwm"), ExtResource("5_owi52"), ExtResource("6_0dc0k"), ExtResource("7_cfisc"), ExtResource("8_6dlp6"), ExtResource("9_155u3"), ExtResource("10_t53qh"), ExtResource("11_kryx6"), ExtResource("12_wo8tg"), ExtResource("13_mxo4q"), ExtResource("14_s8vl1")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -177,14 +149,44 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_2370v"]
+resource_name = "caminar_izquierda"
+length = 1.75
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Castelli:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Castelli:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8, 0.93333334, 1.0666667, 1.2, 1.3333334, 1.4666667, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("2_xclkm"), ExtResource("3_12ejt"), ExtResource("4_i1xwm"), ExtResource("5_owi52"), ExtResource("6_0dc0k"), ExtResource("7_cfisc"), ExtResource("8_6dlp6"), ExtResource("9_155u3"), ExtResource("10_t53qh"), ExtResource("11_kryx6"), ExtResource("12_wo8tg"), ExtResource("13_mxo4q"), ExtResource("14_s8vl1")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l20er"]
 _data = {
 &"RESET": SubResource("Animation_v2j16"),
-&"caminar_adelante": SubResource("Animation_kbkev"),
+&"caminar_abajo": SubResource("Animation_kbkev"),
+&"caminar_arriba": SubResource("Animation_fdqdk"),
 &"caminar_derecha": SubResource("Animation_dtixb"),
 &"caminar_izquierda": SubResource("Animation_2370v")
 }
@@ -192,13 +194,12 @@ _data = {
 [node name="Castelli" type="CharacterBody2D" unique_id=584961323]
 
 [node name="Castelli" type="Sprite2D" parent="." unique_id=1618330355]
-position = Vector2(623, 275.7668)
+position = Vector2(618, 275.7668)
 scale = Vector2(0.4028777, 0.4034369)
-texture = ExtResource("1_2c1cp")
-hframes = 4
+texture = ExtResource("1_musrp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=814683250]
-position = Vector2(618, 275)
+position = Vector2(616, 275)
 shape = SubResource("RectangleShape2D_kco76")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=453633068]

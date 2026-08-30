@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgktpwp68hr3e"
-path="res://.godot/imported/castelli_adelante.png-71f60325ba20a72116c1d8fe9cb932d4.ctex"
+uid="uid://csoligvd6px2d"
+path="res://.godot/imported/ab1.png-da164d64e1185d4ac67fee3ba919ed7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagenes/castelli/castelli_adelante.png"
-dest_files=["res://.godot/imported/castelli_adelante.png-71f60325ba20a72116c1d8fe9cb932d4.ctex"]
+source_file="res://imagenes/castelli/movimientos/abajo/ab1.png"
+dest_files=["res://.godot/imported/ab1.png-da164d64e1185d4ac67fee3ba919ed7d.ctex"]
 
 [params]
 
