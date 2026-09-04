@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d30oa3evury0t"]
+
+[ext_resource type="Texture2D" uid="uid://dq02h8l0pj0iy" path="res://assets/imagen/buffet.jpeg" id="1_aedf5"]
+[ext_resource type="PackedScene" uid="uid://c8c80wb6phwa7" path="res://escenas/personajes/Castelli.tscn" id="2_to6xu"]
+[ext_resource type="PackedScene" uid="uid://ytirfiey2x6f" path="res://escenas/objetos/piso.tscn" id="3_to6xu"]
+
+[node name="Node2D" type="Node2D" unique_id=240388585]
+position = Vector2(0, -67)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=931200216]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=425314983]
+offset_top = -67.0
+offset_right = 1280.0
+offset_bottom = 647.0
+texture = ExtResource("1_aedf5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Castelli" parent="CanvasLayer" unique_id=584961323 instance=ExtResource("2_to6xu")]
+position = Vector2(1126, 477)
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/Castelli" unique_id=251034044]
+position = Vector2(-1126, -481)
+
+[node name="Piso" parent="CanvasLayer" unique_id=1149255172 instance=ExtResource("3_to6xu")]
+position = Vector2(447, 647)

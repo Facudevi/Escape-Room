@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ytirfiey2x6f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sj6ps"]
+size = Vector2(1439, 36.75)
+
+[node name="Piso" type="Node2D" unique_id=1149255172]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1651750194]
+position = Vector2(190, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1613177170]
+shape = SubResource("RectangleShape2D_sj6ps")
