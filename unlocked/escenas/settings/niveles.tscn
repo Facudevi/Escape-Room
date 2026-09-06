@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://bjoim44ghkgk4"]
+
+[ext_resource type="Script" uid="uid://bn32mllwedrrk" path="res://scripts/niveles.gd" id="1_4lp1o"]
+[ext_resource type="Texture2D" uid="uid://baesl2mjvvrev" path="res://assets/imagen/inicio.jpeg" id="2_6wupo"]
+[ext_resource type="Texture2D" uid="uid://bkiq52sfplgvp" path="res://assets/castelli/idle.png" id="3_6wupo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gai1"]
+bg_color = Color(0.16, 0.15159999, 0.1488, 1)
+
+[node name="Niveles" type="Control" unique_id=1627536483]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4lp1o")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=529931717]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1637676386]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6wupo")
+expand_mode = 1
+
+[node name="Nivel1" type="Button" parent="." unique_id=529821591]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 146.0
+offset_right = 523.0
+offset_bottom = 215.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+text = "NIVEL 1"
+
+[node name="Nivel2" type="Button" parent="." unique_id=609526211]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 146.0
+offset_right = 977.0
+offset_bottom = 215.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+text = "NIVEL 2"
+
+[node name="Nivel3" type="Button" parent="." unique_id=1948326189]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 238.0
+offset_right = 523.0
+offset_bottom = 307.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+text = "NIVEL 3
+"
+
+[node name="Nivel4" type="Button" parent="." unique_id=2036774043]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 238.0
+offset_right = 977.0
+offset_bottom = 307.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+text = "NIVEL 4
+"
+
+[node name="Volver" type="Button" parent="." unique_id=739544997]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 42.0
+offset_right = 724.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+text = "VOLVER"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=38849228]
+position = Vector2(871.25006, 497)
+scale = Vector2(0.3502747, 0.32369936)
+texture = ExtResource("3_6wupo")
+
+[connection signal="pressed" from="Nivel1" to="." method="_on_nivel_1_pressed"]
+[connection signal="pressed" from="Nivel2" to="." method="_on_nivel_2_pressed"]
+[connection signal="pressed" from="Nivel3" to="." method="_on_nivel_3_pressed"]
+[connection signal="pressed" from="Nivel4" to="." method="_on_nivel_4_pressed"]
+[connection signal="pressed" from="Volver" to="." method="_on_volver_pressed"]

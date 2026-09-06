@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c8c80wb6phwa7"]
 
-[ext_resource type="Script" uid="uid://cxi3m5rxpcsrv" path="res://scripts/castelli/s_caminar_izquierda.gd" id="1_7u8q5"]
+[ext_resource type="Script" uid="uid://cxi3m5rxpcsrv" path="res://scripts/s_movimiento_castelli.gd" id="1_7u8q5"]
 [ext_resource type="Texture2D" uid="uid://bkiq52sfplgvp" path="res://assets/castelli/idle.png" id="2_7u8q5"]
 [ext_resource type="Texture2D" uid="uid://csoligvd6px2d" path="res://assets/castelli/movimientos/abajo/ab1.png" id="2_l20er"]
 [ext_resource type="Texture2D" uid="uid://b8m22nwgomvyl" path="res://assets/castelli/movimientos/derecha/d1.png" id="2_s8vl1"]
@@ -38,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://d1vxgurvofrb" path="res://assets/castelli/movimientos/izquierda/iz17.png" id="14_s8vl1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kco76"]
-size = Vector2(148, 271)
+size = Vector2(84, 35.5)
 
 [sub_resource type="Animation" id="Animation_v2j16"]
 length = 0.001
@@ -223,14 +223,16 @@ _data = {
 }
 
 [node name="Castelli" type="CharacterBody2D" unique_id=584961323]
-position = Vector2(-1, -2)
 script = ExtResource("1_7u8q5")
 
 [node name="Castelli" type="Sprite2D" parent="." unique_id=1618330355]
-scale = Vector2(0.4028777, 0.4034369)
+position = Vector2(0, -123.00001)
+scale = Vector2(0.37176853, 0.37368375)
 texture = ExtResource("2_7u8q5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=814683250]
+y_sort_enabled = true
+position = Vector2(0, -18)
 shape = SubResource("RectangleShape2D_kco76")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=453633068]

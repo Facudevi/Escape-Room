@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://0bwujfbvoiqr"]
+
+[ext_resource type="Script" uid="uid://c25gacvpffr6i" path="res://scripts/menu_pausa.gd" id="1_ufons"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1355991338]
+
+[node name="MenuPausa" type="Control" parent="." unique_id=158434475]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_ufons")
+
+[node name="Panel" type="Panel" parent="MenuPausa" unique_id=1798671062]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPausa" unique_id=1869634705]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = -46.5
+offset_right = 157.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MenuPausa/VBoxContainer" unique_id=2062476244]
+layout_mode = 2
+text = "Juego Pausado"
+horizontal_alignment = 1
+
+[node name="Reanudar" type="Button" parent="MenuPausa/VBoxContainer" unique_id=1854354830]
+layout_mode = 2
+text = "REANUDAR"
+
+[node name="Salir" type="Button" parent="MenuPausa/VBoxContainer" unique_id=1801786008]
+layout_mode = 2
+text = "SALIR"
+
+[connection signal="pressed" from="MenuPausa/VBoxContainer/Reanudar" to="MenuPausa" method="_on_reanudar_pressed"]
+[connection signal="pressed" from="MenuPausa/VBoxContainer/Salir" to="MenuPausa" method="_on_salir_pressed"]
