@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cjjn30s0h1kub"]
+
+[ext_resource type="Script" uid="uid://ijujn2633tuf" path="res://scripts/nivel1/vista_pizarra.gd" id="1_b8dpi"]
+[ext_resource type="Texture2D" uid="uid://def1ssxulf0mj" path="res://assets/imagen/buffet/pizarra_prueba.jpg" id="2_g6h8g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gai1"]
+bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)
+
+[node name="VistaPizarra" type="CanvasLayer" unique_id=510962975]
+script = ExtResource("1_b8dpi")
+
+[node name="Control" type="Control" parent="." unique_id=1995852398]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1503427893]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel" unique_id=1622484372]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_g6h8g")
+expand_mode = 1
+
+[node name="Volver" type="Button" parent="Control/Panel" unique_id=1778531061]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 27.0
+offset_right = 106.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+text = "X"
+
+[connection signal="pressed" from="Control/Panel/Volver" to="." method="_on_volver_pressed"]

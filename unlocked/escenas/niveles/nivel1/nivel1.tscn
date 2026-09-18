@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://d30oa3evury0t"]
+
+[ext_resource type="Script" uid="uid://b86yfvpx3uqfs" path="res://scripts/nivel1/nivel_1.gd" id="1_p0ol2"]
+[ext_resource type="PackedScene" uid="uid://0bwujfbvoiqr" path="res://escenas/settings/menu_pausa.tscn" id="2_fphyh"]
+[ext_resource type="Texture2D" uid="uid://dq02h8l0pj0iy" path="res://assets/imagen/buffet/buffet.jpeg" id="3_vsks3"]
+[ext_resource type="PackedScene" uid="uid://c8c80wb6phwa7" path="res://escenas/personajes/Castelli.tscn" id="4_4vrvl"]
+[ext_resource type="PackedScene" uid="uid://ytirfiey2x6f" path="res://escenas/objetos/piso.tscn" id="5_rqsur"]
+[ext_resource type="PackedScene" uid="uid://cjjn30s0h1kub" path="res://escenas/niveles/nivel1/VistaPizarra.tscn" id="6_fphyh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gai1"]
+size = Vector2(112, 79)
+
+[node name="Nivel1" type="Node2D" unique_id=240388585]
+process_mode = 3
+y_sort_enabled = true
+script = ExtResource("1_p0ol2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=931200216]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=425314983]
+anchors_preset = -1
+anchor_top = -0.0015432099
+anchor_right = 0.99986815
+anchor_bottom = 0.99954325
+offset_top = 1.0
+offset_right = 0.15185547
+offset_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("3_vsks3")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Castelli" parent="CanvasLayer" unique_id=584961323 instance=ExtResource("4_4vrvl")]
+y_sort_enabled = true
+position = Vector2(1009, 638)
+
+[node name="Piso" parent="CanvasLayer" unique_id=1149255172 instance=ExtResource("5_rqsur")]
+position = Vector2(396, 678)
+
+[node name="LimitesEscenario" type="StaticBody2D" parent="." unique_id=1347892132]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LimitesEscenario" unique_id=1916424374]
+polygon = PackedVector2Array(1133, 633, 1096, 615, 1063, 600, 1042, 597, 1036, 596, 1007, 595, 993, 587, 982, 584, 588, 584, 419, 584, 379, 584, 92, 585, 92, 576, 94, 574, 94, 540, 54, 554, 53, 555, 52, 558, 52, 562, 52, 566, 50, 568, 44, 570, 38, 571, 32, 571, 29, 571, 29, 572, 30, 574, 30, 581, 12.896652, 588.17236, 0, 594, 0, 648, 0, 0, 1152, 0, 1152, 648, 1149, 649)
+
+[node name="AreaPizarra" type="Area2D" parent="." unique_id=1011061813]
+position = Vector2(657, 324)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPizarra" unique_id=1612448873]
+shape = SubResource("RectangleShape2D_5gai1")
+
+[node name="CanvasLayer2" parent="." unique_id=1355991338 instance=ExtResource("2_fphyh")]
+
+[node name="VistaPizarra" parent="." unique_id=510962975 instance=ExtResource("6_fphyh")]
+
+[connection signal="input_event" from="AreaPizarra" to="." method="_on_area_pizarra_input_event"]
