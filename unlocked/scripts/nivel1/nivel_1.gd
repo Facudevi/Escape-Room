@@ -27,6 +27,8 @@ func _on_area_pizarra_input_event(viewport: Node, event: InputEvent, shape_idx: 
 		print("¡Clic detectado en la pizarra!")
 		if vista_pizarra != null:
 			vista_pizarra.abrir_pizarra()
+		else:
+			print("Error: La variable vista_pizarra no está asignada en el Inspector")
 			
 			
 func _unhandled_input(event: InputEvent) -> void:

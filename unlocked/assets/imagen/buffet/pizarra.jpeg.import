@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://def1ssxulf0mj"
-path="res://.godot/imported/pizarra_prueba.jpg-7faf8b68132efeb5ef91c936c3204247.ctex"
+uid="uid://cg026j6dsehqy"
+path="res://.godot/imported/pizarra.jpeg-9607da2dc0053b5464c18a8c1925bc5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagen/buffet/pizarra_prueba.jpg"
-dest_files=["res://.godot/imported/pizarra_prueba.jpg-7faf8b68132efeb5ef91c936c3204247.ctex"]
+source_file="res://assets/imagen/buffet/pizarra.jpeg"
+dest_files=["res://.godot/imported/pizarra.jpeg-9607da2dc0053b5464c18a8c1925bc5a.ctex"]
 
 [params]
 

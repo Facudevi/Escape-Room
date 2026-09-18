@@ -17,10 +17,12 @@ size = Vector2(116, 81.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kco76"]
 size = Vector2(62, 50.5)
 
-[node name="Nivel1" type="Node2D" unique_id=240388585]
+[node name="Nivel1" type="Node2D" unique_id=240388585 node_paths=PackedStringArray("vista_pizarra", "vista_papel")]
 process_mode = 3
 y_sort_enabled = true
 script = ExtResource("1_p0ol2")
+vista_pizarra = NodePath("VistaPizarra")
+vista_papel = NodePath("VistaPapel")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=931200216]
 
@@ -71,10 +73,9 @@ polygon = PackedVector2Array(1133, 633, 1096, 615, 1063, 600, 1042, 597, 1036, 5
 
 [node name="VistaPapel" parent="." unique_id=228344290 instance=ExtResource("8_gajtb")]
 
-[node name="CanvasLayer2" parent="." unique_id=1355991338 instance=ExtResource("2_fphyh")]
-
 [node name="VistaPizarra" parent="." unique_id=510962975 instance=ExtResource("6_fphyh")]
-visible = false
+
+[node name="CanvasLayer2" parent="." unique_id=1355991338 instance=ExtResource("2_fphyh")]
 
 [connection signal="input_event" from="CanvasLayer/AreaPizarra" to="." method="_on_area_pizarra_input_event"]
 [connection signal="input_event" from="CanvasLayer/AreaCajero" to="." method="_on_area_maquina_input_event"]
