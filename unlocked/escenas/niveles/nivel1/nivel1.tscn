@@ -2,13 +2,20 @@
 
 [ext_resource type="Script" uid="uid://b86yfvpx3uqfs" path="res://scripts/nivel1/nivel_1.gd" id="1_p0ol2"]
 [ext_resource type="PackedScene" uid="uid://0bwujfbvoiqr" path="res://escenas/settings/menu_pausa.tscn" id="2_fphyh"]
-[ext_resource type="Texture2D" uid="uid://dq02h8l0pj0iy" path="res://assets/imagen/buffet/buffet.jpeg" id="3_vsks3"]
+[ext_resource type="Texture2D" uid="uid://brcjcuw10y83q" path="res://assets/imagen/buffet/buffet_1.jpeg" id="2_vsks3"]
 [ext_resource type="PackedScene" uid="uid://c8c80wb6phwa7" path="res://escenas/personajes/Castelli.tscn" id="4_4vrvl"]
 [ext_resource type="PackedScene" uid="uid://ytirfiey2x6f" path="res://escenas/objetos/piso.tscn" id="5_rqsur"]
+[ext_resource type="PackedScene" uid="uid://ofkf7v1jygbf" path="res://escenas/objetos/moneda.tscn" id="5_vsks3"]
+[ext_resource type="PackedScene" uid="uid://o40760mseohc" path="res://escenas/niveles/InventarioUI.tscn" id="6_4vrvl"]
 [ext_resource type="PackedScene" uid="uid://cjjn30s0h1kub" path="res://escenas/niveles/nivel1/VistaPizarra.tscn" id="6_fphyh"]
+[ext_resource type="Script" uid="uid://ft8tgxe3gajp" path="res://scripts/inventario_ui.gd" id="7_rqsur"]
+[ext_resource type="PackedScene" uid="uid://dinjjp53tun1k" path="res://escenas/niveles/nivel1/vistaPapel.tscn" id="8_gajtb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gai1"]
-size = Vector2(112, 79)
+size = Vector2(116, 81.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kco76"]
+size = Vector2(62, 50.5)
 
 [node name="Nivel1" type="Node2D" unique_id=240388585]
 process_mode = 3
@@ -26,9 +33,12 @@ offset_top = 1.0
 offset_right = 0.15185547
 offset_bottom = 1.0
 mouse_filter = 2
-texture = ExtResource("3_vsks3")
+texture = ExtResource("2_vsks3")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Moneda" parent="CanvasLayer" unique_id=101624434 instance=ExtResource("5_vsks3")]
+position = Vector2(277, 576)
 
 [node name="Castelli" parent="CanvasLayer" unique_id=584961323 instance=ExtResource("4_4vrvl")]
 y_sort_enabled = true
@@ -37,19 +47,34 @@ position = Vector2(1009, 638)
 [node name="Piso" parent="CanvasLayer" unique_id=1149255172 instance=ExtResource("5_rqsur")]
 position = Vector2(396, 678)
 
+[node name="AreaPizarra" type="Area2D" parent="CanvasLayer" unique_id=1011061813]
+position = Vector2(657, 324)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaPizarra" unique_id=1612448873]
+position = Vector2(2, 1.25)
+shape = SubResource("RectangleShape2D_5gai1")
+
+[node name="AreaCajero" type="Area2D" parent="CanvasLayer" unique_id=1443685388]
+position = Vector2(173, 372)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaCajero" unique_id=96955409]
+position = Vector2(653, 50.25)
+shape = SubResource("RectangleShape2D_kco76")
+
+[node name="InventarioUi" parent="." unique_id=1217834587 instance=ExtResource("6_4vrvl")]
+script = ExtResource("7_rqsur")
+
 [node name="LimitesEscenario" type="StaticBody2D" parent="." unique_id=1347892132]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LimitesEscenario" unique_id=1916424374]
-polygon = PackedVector2Array(1133, 633, 1096, 615, 1063, 600, 1042, 597, 1036, 596, 1007, 595, 993, 587, 982, 584, 588, 584, 419, 584, 379, 584, 92, 585, 92, 576, 94, 574, 94, 540, 54, 554, 53, 555, 52, 558, 52, 562, 52, 566, 50, 568, 44, 570, 38, 571, 32, 571, 29, 571, 29, 572, 30, 574, 30, 581, 12.896652, 588.17236, 0, 594, 0, 648, 0, 0, 1152, 0, 1152, 648, 1149, 649)
+polygon = PackedVector2Array(1133, 633, 1096, 615, 1063, 600, 1042, 597, 1036, 596, 1007, 595, 993, 587, 982, 584, 588, 584, 419, 584, 379, 584, 253.62646, 584.4368, 92, 585, 92, 576, 94, 574, 94, 540, 54, 554, 53, 555, 52, 558, 52, 562, 52, 566, 50, 568, 44, 570, 38, 571, 32, 571, 29, 571, 29, 572, 30, 574, 30, 581, 12.896652, 588.17236, 0, 594, 0, 648, 0, 0, 1152, 0, 1152, 648, 1149, 649)
 
-[node name="AreaPizarra" type="Area2D" parent="." unique_id=1011061813]
-position = Vector2(657, 324)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPizarra" unique_id=1612448873]
-shape = SubResource("RectangleShape2D_5gai1")
+[node name="VistaPapel" parent="." unique_id=228344290 instance=ExtResource("8_gajtb")]
 
 [node name="CanvasLayer2" parent="." unique_id=1355991338 instance=ExtResource("2_fphyh")]
 
 [node name="VistaPizarra" parent="." unique_id=510962975 instance=ExtResource("6_fphyh")]
+visible = false
 
-[connection signal="input_event" from="AreaPizarra" to="." method="_on_area_pizarra_input_event"]
+[connection signal="input_event" from="CanvasLayer/AreaPizarra" to="." method="_on_area_pizarra_input_event"]
+[connection signal="input_event" from="CanvasLayer/AreaCajero" to="." method="_on_area_maquina_input_event"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ofkf7v1jygbf"]
+
+[ext_resource type="Script" uid="uid://bi87vtq6m18es" path="res://scripts/nivel1/moneda.gd" id="1_401pb"]
+[ext_resource type="Texture2D" uid="uid://5jy3ws21gw3s" path="res://assets/objetos/moneda_expendedora.png" id="1_wfw2n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kco76"]
+radius = 17.0
+
+[node name="Moneda" type="Area2D" unique_id=101624434]
+script = ExtResource("1_401pb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=259508831]
+position = Vector2(-1.4901161e-08, 0)
+scale = Vector2(0.023489585, 0.027801763)
+texture = ExtResource("1_wfw2n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1847058974]
+shape = SubResource("CircleShape2D_kco76")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

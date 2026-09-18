@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://o40760mseohc"]
+
+[node name="InventarioUi" type="CanvasLayer" unique_id=1217834587]
+
+[node name="PanelInventario" type="Panel" parent="." unique_id=1790165551]
+custom_minimum_size = Vector2(348, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -174.0
+offset_top = -40.0
+offset_right = 174.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ContenedorSlots" type="HBoxContainer" parent="PanelInventario" unique_id=1805733344]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot1" type="PanelContainer" parent="PanelInventario/ContenedorSlots" unique_id=485215718]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="PanelInventario/ContenedorSlots/Slot1" unique_id=434412947]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot2" type="PanelContainer" parent="PanelInventario/ContenedorSlots" unique_id=1797492548]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="PanelInventario/ContenedorSlots/Slot2" unique_id=1543209403]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot3" type="PanelContainer" parent="PanelInventario/ContenedorSlots" unique_id=2137788739]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="PanelInventario/ContenedorSlots/Slot3" unique_id=829072324]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot4" type="PanelContainer" parent="PanelInventario/ContenedorSlots" unique_id=295762907]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="PanelInventario/ContenedorSlots/Slot4" unique_id=1599521993]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot5" type="PanelContainer" parent="PanelInventario/ContenedorSlots" unique_id=119779152]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="PanelInventario/ContenedorSlots/Slot5" unique_id=52230433]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot6" type="PanelContainer" parent="PanelInventario/ContenedorSlots" unique_id=224756776]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="PanelInventario/ContenedorSlots/Slot6" unique_id=1789409890]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot7" type="PanelContainer" parent="PanelInventario/ContenedorSlots" unique_id=1339797854]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="PanelInventario/ContenedorSlots/Slot7" unique_id=1895141929]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot8" type="PanelContainer" parent="PanelInventario/ContenedorSlots" unique_id=2041496349]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="PanelInventario/ContenedorSlots/Slot8" unique_id=895750700]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5

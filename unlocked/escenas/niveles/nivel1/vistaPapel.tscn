@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dinjjp53tun1k"]
+
+[ext_resource type="Script" uid="uid://cjty1pu40ccpa" path="res://scripts/nivel1/vista_papel.gd" id="1_p67mj"]
+[ext_resource type="Texture2D" uid="uid://3r6th4443djo" path="res://assets/objetos/nota_acertijo.png" id="2_8hwfr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hwfr"]
+bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)
+
+[node name="VistaPapel" type="CanvasLayer" unique_id=228344290]
+script = ExtResource("1_p67mj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=95002063]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.38431373)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=872130647]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -491.0
+offset_top = -269.375
+offset_right = 491.0
+offset_bottom = 269.375
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8hwfr")
+expand_mode = 1
+
+[node name="BotonCerrar" type="Button" parent="." unique_id=1776404094]
+offset_left = 37.0
+offset_top = 27.0
+offset_right = 106.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_8hwfr")
+text = "X"
+
+[connection signal="pressed" from="BotonCerrar" to="." method="_on_boton_cerrar_pressed"]
