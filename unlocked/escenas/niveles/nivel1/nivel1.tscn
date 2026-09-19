@@ -9,13 +9,20 @@
 [ext_resource type="PackedScene" uid="uid://o40760mseohc" path="res://escenas/niveles/InventarioUI.tscn" id="6_4vrvl"]
 [ext_resource type="PackedScene" uid="uid://cjjn30s0h1kub" path="res://escenas/niveles/nivel1/VistaPizarra.tscn" id="6_fphyh"]
 [ext_resource type="Script" uid="uid://ft8tgxe3gajp" path="res://scripts/inventario_ui.gd" id="7_rqsur"]
-[ext_resource type="PackedScene" uid="uid://dinjjp53tun1k" path="res://escenas/niveles/nivel1/vistaPapel.tscn" id="8_gajtb"]
+[ext_resource type="PackedScene" uid="uid://dinjjp53tun1k" path="res://escenas/niveles/nivel1/VistaPapel.tscn" id="8_gajtb"]
+[ext_resource type="PackedScene" uid="uid://b04d1foulacxd" path="res://escenas/niveles/nivel1/VistaTeclado.tscn" id="10_6bu68"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gai1"]
 size = Vector2(116, 81.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kco76"]
 size = Vector2(62, 50.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyiir"]
+size = Vector2(33, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xypma"]
+size = Vector2(114, 302)
 
 [node name="Nivel1" type="Node2D" unique_id=240388585 node_paths=PackedStringArray("vista_pizarra", "vista_papel")]
 process_mode = 3
@@ -63,19 +70,37 @@ position = Vector2(173, 372)
 position = Vector2(653, 50.25)
 shape = SubResource("RectangleShape2D_kco76")
 
+[node name="AreaTeclado" type="Area2D" parent="CanvasLayer" unique_id=935642596]
+position = Vector2(1039, 398)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaTeclado" unique_id=2050011941]
+position = Vector2(-2.5, 0)
+shape = SubResource("RectangleShape2D_hyiir")
+
+[node name="AreaSalida" type="Area2D" parent="CanvasLayer" unique_id=1663528570]
+position = Vector2(1113, 406)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaSalida" unique_id=2044698629]
+position = Vector2(-21, 60)
+shape = SubResource("RectangleShape2D_xypma")
+
 [node name="InventarioUi" parent="." unique_id=1217834587 instance=ExtResource("6_4vrvl")]
 script = ExtResource("7_rqsur")
 
 [node name="LimitesEscenario" type="StaticBody2D" parent="." unique_id=1347892132]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LimitesEscenario" unique_id=1916424374]
-polygon = PackedVector2Array(1133, 633, 1096, 615, 1063, 600, 1042, 597, 1036, 596, 1007, 595, 993, 587, 982, 584, 588, 584, 419, 584, 379, 584, 253.62646, 584.4368, 92, 585, 92, 576, 94, 574, 94, 540, 54, 554, 53, 555, 52, 558, 52, 562, 52, 566, 50, 568, 44, 570, 38, 571, 32, 571, 29, 571, 29, 572, 30, 574, 30, 581, 12.896652, 588.17236, 0, 594, 0, 648, 0, 0, 1152, 0, 1152, 648, 1149, 649)
+polygon = PackedVector2Array(1133, 633, 1096, 615, 1063, 600, 1042, 597, 1036, 596, 1007, 595, 993, 587, 982, 584, 588, 585, 419, 585, 379, 585, 253.62646, 584.4368, 92, 585, 92, 576, 94, 574, 94, 540, 54, 554, 53, 555, 52, 558, 52, 562, 52, 566, 50, 568, 44, 570, 38, 571, 32, 571, 29, 571, 29, 572, 30, 574, 30, 581, 12.896652, 588.17236, 0, 594, 0, 648, 0, 0, 1152, 0, 1152, 648, 1149, 649)
 
 [node name="VistaPapel" parent="." unique_id=228344290 instance=ExtResource("8_gajtb")]
 
 [node name="VistaPizarra" parent="." unique_id=510962975 instance=ExtResource("6_fphyh")]
 
+[node name="VistaTeclado" parent="." unique_id=1408255511 instance=ExtResource("10_6bu68")]
+
 [node name="CanvasLayer2" parent="." unique_id=1355991338 instance=ExtResource("2_fphyh")]
 
 [connection signal="input_event" from="CanvasLayer/AreaPizarra" to="." method="_on_area_pizarra_input_event"]
 [connection signal="input_event" from="CanvasLayer/AreaCajero" to="." method="_on_area_maquina_input_event"]
+[connection signal="input_event" from="CanvasLayer/AreaTeclado" to="." method="_on_area_teclado_input_event"]
+[connection signal="input_event" from="CanvasLayer/AreaSalida" to="." method="_on_area_salida_input_event"]
