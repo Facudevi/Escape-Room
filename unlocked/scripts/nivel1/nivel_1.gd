@@ -105,5 +105,9 @@ func _on_area_salida_input_event(viewport: Node, event: InputEvent, shape_idx: i
 # 3. Finaliza el juego
 func completar_juego() -> void:
 	print("¡HAS ESCAPADO CON ÉXITO! Fin del nivel.")
-	# Cambia a la pantalla de victoria o niveles
+	
+	# Limpiamos el inventario global antes de salir
+	Global.reiniciar_datos()
+	
+	# Cambiamos a la pantalla de victoria o menú de niveles
 	get_tree().change_scene_to_file("res://escenas/settings/niveles.tscn")

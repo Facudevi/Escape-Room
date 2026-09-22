@@ -49,34 +49,31 @@ func actualizar_interfaz() -> void:
 		var slot_panel = slots[i]
 		var icono = slot_panel.get_node("Icono")
 		
-		# Restablecemos la modulación a blanco por defecto
+		# Restablecemos la modulación a blanco
 		slot_panel.self_modulate = Color(1, 1, 1)
 		
-		# 1. Si el slot está seleccionado, le aplicamos un StyleBoxFlat con borde amarillo
-		if i == Global.item_seleccionado_idx:
+		# 1. Borde amarillo de selección
+		if i == Global.item_seleccionado_idx and Global.item_seleccionado_idx != -1:
 			var estilo_seleccionado = StyleBoxFlat.new()
-			
-			# Fondo transparente o del color original de tus casilleros
 			estilo_seleccionado.bg_color = Color(0, 0, 0, 0.4) 
-			
-			# Ancho del borde (en píxeles) para los 4 lados
 			estilo_seleccionado.border_width_left = 3
 			estilo_seleccionado.border_width_top = 3
 			estilo_seleccionado.border_width_right = 3
 			estilo_seleccionado.border_width_bottom = 3
-			
-			# Color amarillo sólido (100% opacidad) para el marco exterior
 			estilo_seleccionado.border_color = Color(1, 1, 0, 1) 
-			
 			slot_panel.add_theme_stylebox_override("panel", estilo_seleccionado)
 		else:
-			# Quitamos el estilo personalizado para que vuelva al estado normal
 			slot_panel.remove_theme_stylebox_override("panel")
 			
-		# 2. Mostramos u ocultamos el ítem
-		if i < Global.inventario.size():
-			icono.texture = load(Global.inventario[i])
-			icono.visible = true
+		# 2. Carga y visualización de la textura
+		if i < Global.inventario.size() and Global.inventario[i] != "":
+			var ruta_item = Global.inventario[i]
+			if ResourceLoader.exists(ruta_item):
+				icono.texture = load(ruta_item)
+				icono.visible = true
+			else:
+				icono.texture = null
+				icono.visible = false
 		else:
 			icono.texture = null
 			icono.visible = false
