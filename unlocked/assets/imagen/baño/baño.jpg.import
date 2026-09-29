@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqyej7pwsytct"
-path="res://.godot/imported/teclado_numerico.jpg-ef5d007b314558d0eca5415262860e76.ctex"
+uid="uid://dk2yvqvk2oh25"
+path="res://.godot/imported/baño.jpg-f894c906dca46e2fd2e516bf8d59acef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objetos/teclado_numerico.jpg"
-dest_files=["res://.godot/imported/teclado_numerico.jpg-ef5d007b314558d0eca5415262860e76.ctex"]
+source_file="res://assets/imagen/baño/baño.jpg"
+dest_files=["res://.godot/imported/baño.jpg-f894c906dca46e2fd2e516bf8d59acef.ctex"]
 
 [params]
 

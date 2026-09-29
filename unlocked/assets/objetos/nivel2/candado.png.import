@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqs7pulm7owik"
-path="res://.godot/imported/baño1.jpeg-dcaf0fed8f33fdf8149ed0ccd3eb5950.ctex"
+uid="uid://gvwe2iugvvto"
+path="res://.godot/imported/candado.png-a49b1deb4c7a6a44d6141fab3b0c1b00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagen/baño/baño1.jpeg"
-dest_files=["res://.godot/imported/baño1.jpeg-dcaf0fed8f33fdf8149ed0ccd3eb5950.ctex"]
+source_file="res://assets/objetos/nivel2/candado.png"
+dest_files=["res://.godot/imported/candado.png-a49b1deb4c7a6a44d6141fab3b0c1b00.ctex"]
 
 [params]
 

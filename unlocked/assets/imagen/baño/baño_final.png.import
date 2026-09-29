@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3r6th4443djo"
-path="res://.godot/imported/nota_acertijo.png-1bb80c8fb81eff159150ecd717aae424.ctex"
+uid="uid://d057q1vvnkgs8"
+path="res://.godot/imported/baño_final.png-4810bba2bcc769dfb080529458fe4e5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objetos/nota_acertijo.png"
-dest_files=["res://.godot/imported/nota_acertijo.png-1bb80c8fb81eff159150ecd717aae424.ctex"]
+source_file="res://assets/imagen/baño/baño_final.png"
+dest_files=["res://.godot/imported/baño_final.png-4810bba2bcc769dfb080529458fe4e5e.ctex"]
 
 [params]
 

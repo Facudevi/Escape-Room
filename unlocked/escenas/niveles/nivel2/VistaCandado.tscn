@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://deb08bj215dv8"]
+
+[ext_resource type="Script" uid="uid://bhiqb6nepd0rb" path="res://scripts/nivel2/vista_candado.gd" id="1_74is3"]
+[ext_resource type="Texture2D" uid="uid://buqlegpckv46d" path="res://assets/objetos/nivel2/candado_zoom.png" id="2_qh3s3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hf46m"]
+bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)
+
+[node name="VistaCandado" type="CanvasLayer" unique_id=686902333]
+script = ExtResource("1_74is3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=885510170]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.41960785)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=515767389]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.25
+offset_top = -243.25
+offset_right = 248.25
+offset_bottom = 243.25
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qh3s3")
+
+[node name="Digito1" type="Label" parent="TextureRect" unique_id=1582383409]
+layout_mode = 0
+offset_left = 211.25
+offset_top = 82.25
+offset_right = 282.25
+offset_bottom = 132.25
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Abajo1" type="Button" parent="TextureRect" unique_id=1794217469]
+layout_mode = 0
+offset_left = 49.25
+offset_top = 81.25
+offset_right = 101.25
+offset_bottom = 133.25
+theme_override_font_sizes/font_size = 31
+text = "▼"
+icon_alignment = 1
+
+[node name="Arriba1" type="Button" parent="TextureRect" unique_id=326583574]
+layout_mode = 0
+offset_left = 394.25
+offset_top = 81.25
+offset_right = 446.25
+offset_bottom = 133.25
+theme_override_font_sizes/font_size = 31
+text = "▲"
+icon_alignment = 1
+
+[node name="Digito2" type="Label" parent="TextureRect" unique_id=1559627111]
+layout_mode = 0
+offset_left = 211.25
+offset_top = 154.25
+offset_right = 282.25
+offset_bottom = 204.25
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Abajo2" type="Button" parent="TextureRect" unique_id=757422884]
+layout_mode = 0
+offset_left = 49.25
+offset_top = 153.25
+offset_right = 101.25
+offset_bottom = 205.25
+theme_override_font_sizes/font_size = 31
+text = "▼"
+icon_alignment = 1
+
+[node name="Arriba2" type="Button" parent="TextureRect" unique_id=205975619]
+layout_mode = 0
+offset_left = 394.25
+offset_top = 153.25
+offset_right = 446.25
+offset_bottom = 205.25
+theme_override_font_sizes/font_size = 31
+text = "▲"
+icon_alignment = 1
+
+[node name="Digito3" type="Label" parent="TextureRect" unique_id=840482573]
+layout_mode = 0
+offset_left = 211.25
+offset_top = 224.25
+offset_right = 282.25
+offset_bottom = 274.25
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Abajo3" type="Button" parent="TextureRect" unique_id=1066145877]
+layout_mode = 0
+offset_left = 49.25
+offset_top = 223.25
+offset_right = 101.25
+offset_bottom = 275.25
+theme_override_font_sizes/font_size = 31
+text = "▼"
+icon_alignment = 1
+
+[node name="Arriba3" type="Button" parent="TextureRect" unique_id=457777439]
+layout_mode = 0
+offset_left = 394.25
+offset_top = 223.25
+offset_right = 446.25
+offset_bottom = 275.25
+theme_override_font_sizes/font_size = 31
+text = "▲"
+icon_alignment = 1
+
+[node name="Digito4" type="Label" parent="TextureRect" unique_id=1399277390]
+layout_mode = 0
+offset_left = 211.25
+offset_top = 296.25
+offset_right = 282.25
+offset_bottom = 346.25
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Abajo4" type="Button" parent="TextureRect" unique_id=24116316]
+layout_mode = 0
+offset_left = 49.25
+offset_top = 295.25
+offset_right = 101.25
+offset_bottom = 347.25
+theme_override_font_sizes/font_size = 31
+text = "▼"
+icon_alignment = 1
+
+[node name="Arriba4" type="Button" parent="TextureRect" unique_id=318496156]
+layout_mode = 0
+offset_left = 394.25
+offset_top = 295.25
+offset_right = 446.25
+offset_bottom = 347.25
+theme_override_font_sizes/font_size = 31
+text = "▲"
+icon_alignment = 1
+
+[node name="BotonCerrar" type="Button" parent="." unique_id=1532309043]
+offset_left = 37.0
+offset_top = 27.0
+offset_right = 106.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_hf46m")
+text = "X"
+
+[connection signal="pressed" from="BotonCerrar" to="." method="_on_boton_cerrar_pressed"]

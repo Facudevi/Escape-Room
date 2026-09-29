@@ -84,6 +84,8 @@ position = Vector2(1113, 406)
 position = Vector2(-21, 60)
 shape = SubResource("RectangleShape2D_xypma")
 
+[node name="VistaPapel" parent="." unique_id=228344290 instance=ExtResource("8_gajtb")]
+
 [node name="InventarioUi" parent="." unique_id=1217834587 instance=ExtResource("6_4vrvl")]
 script = ExtResource("7_rqsur")
 
@@ -91,8 +93,6 @@ script = ExtResource("7_rqsur")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LimitesEscenario" unique_id=1916424374]
 polygon = PackedVector2Array(1133, 633, 1096, 615, 1063, 600, 1042, 597, 1036, 596, 1007, 595, 993, 587, 982, 584, 588, 585, 419, 585, 379, 585, 253.62646, 584.4368, 92, 585, 92, 576, 94, 574, 94, 540, 54, 554, 53, 555, 52, 558, 52, 562, 52, 566, 50, 568, 44, 570, 38, 571, 32, 571, 29, 571, 29, 572, 30, 574, 30, 581, 12.896652, 588.17236, 0, 594, 0, 648, 0, 0, 1152, 0, 1152, 648, 1149, 649)
-
-[node name="VistaPapel" parent="." unique_id=228344290 instance=ExtResource("8_gajtb")]
 
 [node name="VistaPizarra" parent="." unique_id=510962975 instance=ExtResource("6_fphyh")]
 

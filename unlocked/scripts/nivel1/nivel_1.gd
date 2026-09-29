@@ -8,7 +8,7 @@ extends Node2D
 # Textura de la puerta abierta para reemplazar la imagen del buffet
 @export var imagen_buffet_abierto: Texture2D = preload("res://assets/imagen/buffet/buffet_fin.jpg")
 @export var vista_pizarra: CanvasLayer
-@export var icono_papel: String = "res://assets/objetos/papel_nota.png"
+@export var icono_papel: String = "res://assets/objetos/nivel1/papel_nota.png"
 @export var vista_papel: CanvasLayer
 
 # Control de estado de la puerta

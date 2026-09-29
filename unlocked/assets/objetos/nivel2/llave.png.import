@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5jy3ws21gw3s"
-path="res://.godot/imported/moneda_expendedora.png-560126588bdc20d0a0ff8ae023d70c5c.ctex"
+uid="uid://djureaij403sy"
+path="res://.godot/imported/llave.png-f35eeba9b789c1ba71750de31fec3cb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objetos/moneda_expendedora.png"
-dest_files=["res://.godot/imported/moneda_expendedora.png-560126588bdc20d0a0ff8ae023d70c5c.ctex"]
+source_file="res://assets/objetos/nivel2/llave.png"
+dest_files=["res://.godot/imported/llave.png-f35eeba9b789c1ba71750de31fec3cb5.ctex"]
 
 [params]
 

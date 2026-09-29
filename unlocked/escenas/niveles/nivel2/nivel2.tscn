@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://dira8d43lsbjn"]
+
+[ext_resource type="Script" uid="uid://dnke4oa033os6" path="res://scripts/nivel2/nivel_2.gd" id="1_014pr"]
+[ext_resource type="Texture2D" uid="uid://dk2yvqvk2oh25" path="res://assets/imagen/baño/baño.jpg" id="2_r861x"]
+[ext_resource type="PackedScene" uid="uid://ytirfiey2x6f" path="res://escenas/objetos/piso.tscn" id="3_uiv56"]
+[ext_resource type="Texture2D" uid="uid://gvwe2iugvvto" path="res://assets/objetos/nivel2/candado.png" id="4_xdaye"]
+[ext_resource type="PackedScene" uid="uid://c8c80wb6phwa7" path="res://escenas/personajes/Castelli.tscn" id="5_1ukr1"]
+[ext_resource type="PackedScene" uid="uid://o40760mseohc" path="res://escenas/niveles/InventarioUI.tscn" id="6_c8im3"]
+[ext_resource type="Script" uid="uid://ft8tgxe3gajp" path="res://scripts/inventario_ui.gd" id="7_063d5"]
+[ext_resource type="PackedScene" uid="uid://octavpnn0cg" path="res://escenas/niveles/nivel2/VistaEspejo.tscn" id="8_fnun1"]
+[ext_resource type="PackedScene" uid="uid://cmvdys4j2qk1g" path="res://escenas/niveles/nivel2/VistaCubiculo.tscn" id="9_eio0c"]
+[ext_resource type="PackedScene" uid="uid://deb08bj215dv8" path="res://escenas/niveles/nivel2/VistaCandado.tscn" id="10_7ggik"]
+[ext_resource type="PackedScene" uid="uid://0bwujfbvoiqr" path="res://escenas/settings/menu_pausa.tscn" id="11_4ahab"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gai1"]
+size = Vector2(43, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk67d"]
+size = Vector2(79, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkmt2"]
+size = Vector2(224, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ofh7"]
+size = Vector2(281, 278)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4uvib"]
+size = Vector2(199, 305)
+
+[node name="Nivel2" type="Node2D" unique_id=138191708 node_paths=PackedStringArray("vista_espejo", "vista_cubiculo", "vista_candado")]
+script = ExtResource("1_014pr")
+vista_espejo = NodePath("VistaEspejo")
+vista_cubiculo = NodePath("VistaCubiculo")
+vista_candado = NodePath("VistaCandado")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1553713623]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=64652563]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_r861x")
+expand_mode = 1
+
+[node name="Piso" parent="CanvasLayer" unique_id=1149255172 instance=ExtResource("3_uiv56")]
+position = Vector2(393, 684)
+
+[node name="SpriteCandado" type="Sprite2D" parent="CanvasLayer" unique_id=354386501]
+position = Vector2(1031, 386)
+scale = Vector2(0.08579877, 0.08672081)
+texture = ExtResource("4_xdaye")
+
+[node name="Castelli" parent="CanvasLayer" unique_id=584961323 instance=ExtResource("5_1ukr1")]
+position = Vector2(265, 590)
+
+[node name="AreaTacho" type="Area2D" parent="CanvasLayer" unique_id=1833149243]
+position = Vector2(432, 490)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaTacho" unique_id=993511172]
+shape = SubResource("RectangleShape2D_5gai1")
+
+[node name="AreaCanilla" type="Area2D" parent="CanvasLayer" unique_id=886311313]
+position = Vector2(500, 367)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaCanilla" unique_id=483265247]
+position = Vector2(0.5, 5)
+shape = SubResource("RectangleShape2D_xk67d")
+
+[node name="AreaEspejo" type="Area2D" parent="CanvasLayer" unique_id=1564895651]
+position = Vector2(548, 281)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaEspejo" unique_id=827371728]
+shape = SubResource("RectangleShape2D_pkmt2")
+
+[node name="AreaCubiculo" type="Area2D" parent="CanvasLayer" unique_id=1336650561]
+position = Vector2(966, 369)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaCubiculo" unique_id=1720938213]
+position = Vector2(-55.5, 0)
+shape = SubResource("RectangleShape2D_2ofh7")
+
+[node name="AreaSalida" type="Area2D" parent="CanvasLayer" unique_id=1624120035]
+position = Vector2(234, 371)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaSalida" unique_id=2113688928]
+shape = SubResource("RectangleShape2D_4uvib")
+
+[node name="InventarioUi" parent="." unique_id=1217834587 instance=ExtResource("6_c8im3")]
+layer = 3
+script = ExtResource("7_063d5")
+
+[node name="LimitesEscenario" type="StaticBody2D" parent="." unique_id=156127225]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LimitesEscenario" unique_id=707775683]
+polygon = PackedVector2Array(1152, 648, 1152, 540, 1140, 536, 1057, 577, 760, 495, 760, 463, 463, 522, 457, 522, 452, 517, 440, 520, 428, 520, 416, 516, 413, 499, 75, 557, 22, 648, 0, 648, 0, 0, 1152, 0)
+
+[node name="VistaEspejo" parent="." unique_id=339617719 instance=ExtResource("8_fnun1")]
+visible = false
+
+[node name="VistaCubiculo" parent="." unique_id=628537235 instance=ExtResource("9_eio0c")]
+visible = false
+
+[node name="VistaCandado" parent="." unique_id=686902333 instance=ExtResource("10_7ggik")]
+visible = false
+
+[node name="CanvasLayer2" parent="." unique_id=1355991338 instance=ExtResource("11_4ahab")]
+
+[connection signal="input_event" from="CanvasLayer/AreaTacho" to="." method="_on_area_tacho_input_event"]
+[connection signal="input_event" from="CanvasLayer/AreaCanilla" to="." method="_on_area_canilla_input_event"]
+[connection signal="input_event" from="CanvasLayer/AreaEspejo" to="." method="_on_area_espejo_input_event"]
+[connection signal="input_event" from="CanvasLayer/AreaCubiculo" to="." method="_on_area_cubiculo_input_event"]
+[connection signal="input_event" from="CanvasLayer/AreaSalida" to="." method="_on_area_salida_input_event"]

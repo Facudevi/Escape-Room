@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cmvdys4j2qk1g"]
+
+[ext_resource type="Script" uid="uid://c3ly4uw4mr6ti" path="res://scripts/nivel2/vista_cubiculo.gd" id="1_1hkfx"]
+[ext_resource type="Texture2D" uid="uid://ba1skpo7ci65m" path="res://assets/imagen/baño/cubiculos.png" id="1_pk7ub"]
+[ext_resource type="Texture2D" uid="uid://gvwe2iugvvto" path="res://assets/objetos/nivel2/candado.png" id="2_1hkfx"]
+[ext_resource type="Texture2D" uid="uid://djureaij403sy" path="res://assets/objetos/nivel2/llave.png" id="4_v14bf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukucv"]
+size = Vector2(45.5, 62.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v14bf"]
+bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gai1"]
+size = Vector2(56, 22)
+
+[node name="VistaCubiculo" type="CanvasLayer" unique_id=628537235]
+script = ExtResource("1_1hkfx")
+
+[node name="ImagenCubiculo" type="TextureRect" parent="." unique_id=260700493]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("1_pk7ub")
+expand_mode = 1
+
+[node name="SpriteCandado" type="Sprite2D" parent="." unique_id=777127136]
+position = Vector2(872.9999, 330.00003)
+scale = Vector2(0.17603554, 0.17682928)
+texture = ExtResource("2_1hkfx")
+
+[node name="AreaCandado" type="Area2D" parent="." unique_id=57545719]
+position = Vector2(873, 330)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaCandado" unique_id=797020238]
+shape = SubResource("RectangleShape2D_ukucv")
+
+[node name="BotonCerrar" type="Button" parent="." unique_id=1146270579]
+offset_left = 37.0
+offset_top = 27.0
+offset_right = 106.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_v14bf")
+text = "X"
+
+[node name="AreaLlave" type="Area2D" parent="." unique_id=1945892704]
+position = Vector2(743, 388)
+
+[node name="SpriteLlave" type="Sprite2D" parent="AreaLlave" unique_id=1205991204]
+scale = Vector2(0.04394531, 0.04850261)
+texture = ExtResource("4_v14bf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaLlave" unique_id=156088065]
+shape = SubResource("RectangleShape2D_5gai1")
+
+[connection signal="input_event" from="AreaCandado" to="." method="_on_area_candado_input_event"]
+[connection signal="pressed" from="BotonCerrar" to="." method="_on_boton_cerrar_pressed"]

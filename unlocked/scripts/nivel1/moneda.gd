@@ -1,7 +1,7 @@
 extends Area2D
 
 # Ruta de la imagen de la moneda (ajusta la ruta según tu carpeta de assets)
-@export var icono_moneda: String = "res://assets/objetos/moneda_expendedora.png"
+@export var icono_moneda: String = "res://assets/objetos/nivel1/moneda_expendedora.png"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

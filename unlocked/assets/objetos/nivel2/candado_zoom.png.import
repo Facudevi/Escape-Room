@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvbl2b54ff70c"
-path="res://.godot/imported/papel_nota.png-fefab59690c68486f7b408b997ef70b0.ctex"
+uid="uid://buqlegpckv46d"
+path="res://.godot/imported/candado_zoom.png-8fc23637ebcbc5ad6df16b5985196da0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objetos/papel_nota.png"
-dest_files=["res://.godot/imported/papel_nota.png-fefab59690c68486f7b408b997ef70b0.ctex"]
+source_file="res://assets/objetos/nivel2/candado_zoom.png"
+dest_files=["res://.godot/imported/candado_zoom.png-8fc23637ebcbc5ad6df16b5985196da0.ctex"]
 
 [params]
 
