@@ -32,7 +32,7 @@ size = Vector2(1152, 54)
 size = Vector2(244, 86)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_casillero"]
-size = Vector2(38, 230)
+size = Vector2(36, 161)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_panel"]
 size = Vector2(46, 56)
@@ -62,7 +62,7 @@ expand_mode = 1
 [node name="Colisiones" type="StaticBody2D" parent="Mundo/Fondo1" unique_id=977931036]
 
 [node name="Pared" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones" unique_id=1965241094]
-polygon = PackedVector2Array(0, -40, 1152, -40, 1152, 436, 0, 436)
+polygon = PackedVector2Array(0, -40, 1152, -40, 1152, 450, 0, 451)
 
 [node name="LimiteIzquierdo" type="CollisionShape2D" parent="Mundo/Fondo1/Colisiones" unique_id=495059640]
 position = Vector2(-20, 324)
@@ -73,23 +73,24 @@ position = Vector2(1172, 324)
 shape = SubResource("RectangleShape2D_lado")
 
 [node name="LimiteInferior" type="CollisionShape2D" parent="Mundo/Fondo1/Colisiones" unique_id=856574174]
-position = Vector2(576, 672)
+position = Vector2(576, 693)
 shape = SubResource("RectangleShape2D_bajo")
 
 [node name="PilarIzquierdo" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones" unique_id=661483877]
+position = Vector2(1, 9)
 polygon = PackedVector2Array(380, 430, 442, 430, 442, 448, 380, 448)
 
 [node name="PilarDerecho" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones" unique_id=915235194]
 polygon = PackedVector2Array(815, 430, 915, 430, 915, 442, 815, 442)
 
 [node name="MesaPingPong" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones" unique_id=1746493308]
-polygon = PackedVector2Array(0, 420, 305, 420, 290, 490, 262, 525, 205, 570, 130, 572, 60, 565, 0, 555)
+polygon = PackedVector2Array(0, 420, 305, 420, 289, 496, 256, 525, 195, 559, 148, 586, 120, 578, 59, 572, 0, 566)
 
 [node name="MesasCentro" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones" unique_id=32533341]
-polygon = PackedVector2Array(425, 400, 650, 400, 650, 522, 425, 522)
+polygon = PackedVector2Array(425, 400, 650, 400, 648, 534, 425, 534)
 
 [node name="MesasDerecha" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones" unique_id=456523413]
-polygon = PackedVector2Array(768, 412, 1152, 412, 1152, 485, 1100, 485, 1092, 528, 860, 528, 860, 515, 768, 515)
+polygon = PackedVector2Array(771, 426, 1152, 412, 1152, 492, 1096, 501, 1088, 546, 875, 544, 859, 531, 807, 531, 773, 497)
 
 [node name="FlechaDerecha" parent="Mundo/Fondo1" unique_id=1434903255 instance=ExtResource("4_flecha")]
 position = Vector2(1088, 604)
@@ -101,7 +102,7 @@ angulo_grados = 90.0
 escala_y = 0.55
 
 [node name="PapelA" parent="Mundo/Fondo1" unique_id=1316994953 instance=ExtResource("9_papelsuelo")]
-position = Vector2(168, 552)
+position = Vector2(70, 533)
 textura = ExtResource("10_papela")
 angulo_grados = -20.0
 
@@ -110,7 +111,7 @@ angulo_grados = -20.0
 [node name="Colisiones" type="StaticBody2D" parent="Mundo/Fondo2" unique_id=909024204]
 
 [node name="Pared" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones" unique_id=757964195]
-polygon = PackedVector2Array(0, -40, 1152, -40, 1152, 436, 0, 436)
+polygon = PackedVector2Array(0, -40, 1152, -40, 1152, 454, 0, 454)
 
 [node name="LimiteIzquierdo" type="CollisionShape2D" parent="Mundo/Fondo2/Colisiones" unique_id=687643615]
 position = Vector2(-20, 324)
@@ -121,23 +122,24 @@ position = Vector2(1172, 324)
 shape = SubResource("RectangleShape2D_lado")
 
 [node name="LimiteInferior" type="CollisionShape2D" parent="Mundo/Fondo2/Colisiones" unique_id=973261410]
-position = Vector2(576, 672)
+position = Vector2(576, 693)
 shape = SubResource("RectangleShape2D_bajo")
 
 [node name="PilarIzquierdo" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones" unique_id=64164507]
-polygon = PackedVector2Array(380, 430, 442, 430, 442, 448, 380, 448)
+polygon = PackedVector2Array(381, 440, 443, 440, 443, 458, 381, 458)
 
 [node name="MesaPingPong" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones" unique_id=1646095242]
-polygon = PackedVector2Array(0, 420, 305, 420, 290, 490, 262, 525, 205, 570, 130, 572, 60, 565, 0, 555)
+polygon = PackedVector2Array(0, 420, 305, 420, 289, 496, 256, 525, 194, 559, 148, 586, 121, 578, 55, 572, 0, 566)
 
 [node name="MesasCentro" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones" unique_id=2025235003]
-polygon = PackedVector2Array(425, 400, 650, 400, 650, 522, 425, 522)
+polygon = PackedVector2Array(425, 400, 650, 400, 650, 535, 425, 535)
 
 [node name="Metegol" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones" unique_id=208140373]
-polygon = PackedVector2Array(520, 410, 768, 410, 768, 578, 520, 578)
+position = Vector2(-3, 13)
+polygon = PackedVector2Array(520, 410, 776, 410, 776, 568, 762, 578, 533, 578, 520, 568)
 
 [node name="MesasDerechaCasilleros" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones" unique_id=1846114986]
-polygon = PackedVector2Array(768, 412, 1152, 412, 1152, 538, 1090, 528, 860, 528, 860, 515, 768, 515)
+polygon = PackedVector2Array(768, 412, 1152, 412, 1152, 552, 1096, 552, 1073, 546, 1012, 546, 983, 540, 900, 540, 887, 530, 850, 530, 806, 530, 770, 515)
 
 [node name="FlechaIzquierda" parent="Mundo/Fondo2" unique_id=142978981 instance=ExtResource("4_flecha")]
 position = Vector2(110, 618)
@@ -154,6 +156,7 @@ shape = SubResource("RectangleShape2D_metegol")
 position = Vector2(1007, 410)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/Fondo2/AreaCasillero" unique_id=1637617361]
+position = Vector2(-5, -27.5)
 shape = SubResource("RectangleShape2D_casillero")
 
 [node name="SpriteCandado" type="Sprite2D" parent="Mundo/Fondo2" unique_id=386317546]
@@ -172,6 +175,7 @@ texture = ExtResource("11_candado")
 [node name="Colisiones" type="StaticBody2D" parent="Mundo/Fondo3" unique_id=146432609]
 
 [node name="Pared" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones" unique_id=1907948504]
+position = Vector2(0, 10)
 polygon = PackedVector2Array(0, -40, 1152, -40, 1152, 436, 0, 436)
 
 [node name="LimiteIzquierdo" type="CollisionShape2D" parent="Mundo/Fondo3/Colisiones" unique_id=425385858]
@@ -183,20 +187,20 @@ position = Vector2(1172, 324)
 shape = SubResource("RectangleShape2D_lado")
 
 [node name="LimiteInferior" type="CollisionShape2D" parent="Mundo/Fondo3/Colisiones" unique_id=1746827075]
-position = Vector2(576, 672)
+position = Vector2(576, 693)
 shape = SubResource("RectangleShape2D_bajo")
 
 [node name="SillasApiladas" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones" unique_id=342790162]
-polygon = PackedVector2Array(200, 380, 575, 380, 575, 462, 200, 462)
+polygon = PackedVector2Array(200, 380, 573, 380, 573, 446, 545, 462, 200, 462)
 
 [node name="MesasPingPongIzquierda" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones" unique_id=663528373]
-polygon = PackedVector2Array(0, 408, 238, 408, 238, 472, 125, 492, 90, 528, 0, 525)
+polygon = PackedVector2Array(0, 408, 238, 408, 238, 472, 107, 516, 54, 550, 0, 565)
 
 [node name="MesaPingPongFrente" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones" unique_id=472470791]
-polygon = PackedVector2Array(135, 470, 522, 455, 522, 525, 490, 548, 440, 580, 290, 580, 185, 575, 135, 545)
+polygon = PackedVector2Array(132, 459, 523, 459, 523, 525, 485, 560, 441, 596, 289, 596, 178, 596, 147, 575, 132, 545)
 
 [node name="ParedDerechaYTachos" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones" unique_id=266739376]
-polygon = PackedVector2Array(905, 0, 905, 420, 1000, 474, 1004, 533, 1075, 538, 1085, 566, 1152, 568, 1152, 0)
+polygon = PackedVector2Array(905, 0, 905, 444, 1004, 502, 1006, 537, 1056, 569, 1094, 582, 1152, 577, 1152, 0)
 
 [node name="FlechaVolver" parent="Mundo/Fondo3" unique_id=591320986 instance=ExtResource("4_flecha")]
 position = Vector2(660, 588)
@@ -232,7 +236,7 @@ position = Vector2(818.5, 376.5)
 shape = SubResource("RectangleShape2D_puerta")
 
 [node name="Castelli" parent="Mundo" unique_id=974951113 instance=ExtResource("3_castelli")]
-position = Vector2(560, 570)
+position = Vector2(805, 567)
 
 [node name="Lampara" parent="Mundo" unique_id=716162722 instance=ExtResource("19_lampara")]
 
