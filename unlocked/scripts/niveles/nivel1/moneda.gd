@@ -1,5 +1,8 @@
 extends Area2D
 
+# El nivel la conecta a su sistema de avisos
+signal aviso_solicitado(texto: String)
+
 # Ruta de la imagen de la moneda (ajusta la ruta según tu carpeta de assets)
 @export var icono_moneda: String = "res://assets/objetos/nivel1/moneda_expendedora.png"
 
@@ -22,4 +25,7 @@ func recolectar_moneda() -> void:
 	var exito: bool = Global.agregar_objeto(icono_moneda)
 	if exito:
 		Global.monedas += 1
+		aviso_solicitado.emit("Encontraste una moneda. Quizás sirva en algún lado.")
 		queue_free()
+	else:
+		aviso_solicitado.emit("El inventario está lleno.")

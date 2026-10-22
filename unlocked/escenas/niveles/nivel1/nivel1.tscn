@@ -11,8 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://cjjn30s0h1kub" path="res://escenas/niveles/nivel1/VistaPizarra.tscn" id="6_fphyh"]
 [ext_resource type="PackedScene" uid="uid://oo6itmgfv3ct" path="res://escenas/comun/VistaPapelLupa.tscn" id="7_6f3qs"]
 [ext_resource type="Script" uid="uid://ft8tgxe3gajp" path="res://scripts/comun/inventario_ui.gd" id="7_rqsur"]
-[ext_resource type="PackedScene" uid="uid://dinjjp53tun1k" path="res://escenas/niveles/nivel1/vistaPapel.tscn" id="8_gajtb"]
+[ext_resource type="PackedScene" uid="uid://dinjjp53tun1k" path="res://escenas/niveles/nivel1/VistaPapel.tscn" id="8_gajtb"]
 [ext_resource type="PackedScene" uid="uid://b04d1foulacxd" path="res://escenas/niveles/nivel1/VistaTeclado.tscn" id="10_6bu68"]
+[ext_resource type="Script" uid="uid://cy0manwg2sbx6" path="res://scripts/niveles/nivel3/vista_pista_n3.gd" id="11_pista"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gai1"]
 size = Vector2(116, 81.5)
@@ -24,7 +25,25 @@ size = Vector2(62, 50.5)
 size = Vector2(33, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xypma"]
-size = Vector2(114, 302)
+size = Vector2(96, 302)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_heladera"]
+size = Vector2(105, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_microondas"]
+size = Vector2(116, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gondola"]
+size = Vector2(224, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cafetera"]
+size = Vector2(46, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_termotanque"]
+size = Vector2(48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tacho"]
+size = Vector2(36, 48)
 
 [node name="Nivel1" type="Node2D" unique_id=240388585 node_paths=PackedStringArray("vista_pizarra", "vista_papel_lupa", "lampara")]
 process_mode = 3
@@ -35,6 +54,7 @@ vista_papel_lupa = NodePath("vistaPapelLupa")
 lampara = NodePath("CanvasLayer/Lampara")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=931200216]
+process_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=425314983]
 anchors_preset = -1
@@ -87,15 +107,55 @@ shape = SubResource("RectangleShape2D_hyiir")
 position = Vector2(1113, 406)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaSalida" unique_id=2044698629]
-position = Vector2(-21, 60)
+position = Vector2(-9, 60)
 shape = SubResource("RectangleShape2D_xypma")
 
+[node name="AreaHeladera" type="Area2D" parent="CanvasLayer"]
+position = Vector2(181, 373)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaHeladera"]
+shape = SubResource("RectangleShape2D_heladera")
+
+[node name="AreaMicroondas" type="Area2D" parent="CanvasLayer"]
+position = Vector2(301, 356)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaMicroondas"]
+shape = SubResource("RectangleShape2D_microondas")
+
+[node name="AreaGondola" type="Area2D" parent="CanvasLayer"]
+position = Vector2(675, 405)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaGondola"]
+shape = SubResource("RectangleShape2D_gondola")
+
+[node name="AreaCafetera" type="Area2D" parent="CanvasLayer"]
+position = Vector2(933, 411)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaCafetera"]
+shape = SubResource("RectangleShape2D_cafetera")
+
+[node name="AreaTermotanque" type="Area2D" parent="CanvasLayer"]
+position = Vector2(784, 290)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaTermotanque"]
+shape = SubResource("RectangleShape2D_termotanque")
+
+[node name="AreaTacho" type="Area2D" parent="CanvasLayer"]
+position = Vector2(43, 544)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AreaTacho"]
+shape = SubResource("RectangleShape2D_tacho")
+
 [node name="vistaPapelLupa" parent="." unique_id=1305914553 instance=ExtResource("7_6f3qs")]
+process_mode = 1
+layer = 2
+script = ExtResource("11_pista")
 
 [node name="VistaPapel" parent="." unique_id=228344290 instance=ExtResource("8_gajtb")]
-visible = false
+process_mode = 1
 
 [node name="InventarioUi" parent="." unique_id=1217834587 instance=ExtResource("6_4vrvl")]
+process_mode = 1
 script = ExtResource("7_rqsur")
 
 [node name="LimitesEscenario" type="StaticBody2D" parent="." unique_id=1347892132]
@@ -104,13 +164,29 @@ script = ExtResource("7_rqsur")
 polygon = PackedVector2Array(1133, 633, 1096, 615, 1063, 600, 1042, 597, 1036, 596, 1007, 595, 993, 587, 982, 584, 588, 585, 419, 585, 379, 585, 253.62646, 584.4368, 92, 585, 92, 576, 94, 574, 94, 540, 54, 554, 53, 555, 52, 558, 52, 562, 52, 566, 50, 568, 44, 570, 38, 571, 32, 571, 29, 571, 29, 572, 30, 574, 30, 581, 12.896652, 588.17236, 0, 594, 0, 648, 0, 0, 1152, 0, 1152, 648, 1149, 649)
 
 [node name="VistaPizarra" parent="." unique_id=510962975 instance=ExtResource("6_fphyh")]
-visible = false
+process_mode = 1
 
 [node name="VistaTeclado" parent="." unique_id=1408255511 instance=ExtResource("10_6bu68")]
-visible = false
+process_mode = 1
+
+[node name="Aviso" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="Mensaje" type="Label" parent="Aviso"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 28.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="CanvasLayer2" parent="." unique_id=1355991338 instance=ExtResource("2_fphyh")]
-visible = false
+layer = 10
 
 [connection signal="input_event" from="CanvasLayer/AreaPizarra" to="." method="_on_area_pizarra_input_event"]
 [connection signal="input_event" from="CanvasLayer/AreaCajero" to="." method="_on_area_maquina_input_event"]
