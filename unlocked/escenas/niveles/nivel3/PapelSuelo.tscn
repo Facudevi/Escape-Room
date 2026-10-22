@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/nivel3/papel_suelo.gd" id="1_papel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_papel"]
+size = Vector2(58, 36)
+
+[node name="PapelSuelo" type="Area2D"]
+script = ExtResource("1_papel")
+
+[node name="Pivote" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivote"]
+
+[node name="Sombra" type="Sprite2D" parent="Pivote/Sprite2D"]
+modulate = Color(0, 0, 0, 0.3)
+show_behind_parent = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_papel")
