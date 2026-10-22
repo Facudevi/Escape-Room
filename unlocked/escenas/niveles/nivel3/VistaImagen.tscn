@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://scripts/nivel3/vista_imagen.gd" id="1_vista"]
+[ext_resource type="Script" path="res://scripts/niveles/nivel3/vista_imagen.gd" id="1_vista"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cerrar"]
 bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)

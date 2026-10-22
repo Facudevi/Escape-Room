@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cmvdys4j2qk1g"]
 
-[ext_resource type="Script" uid="uid://c3ly4uw4mr6ti" path="res://scripts/nivel2/vista_cubiculo.gd" id="1_1hkfx"]
-[ext_resource type="Texture2D" uid="uid://ba1skpo7ci65m" path="res://assets/imagen/baño/cubiculos.png" id="1_pk7ub"]
+[ext_resource type="Script" uid="uid://c3ly4uw4mr6ti" path="res://scripts/niveles/nivel2/vista_cubiculo.gd" id="1_1hkfx"]
+[ext_resource type="Texture2D" uid="uid://ba1skpo7ci65m" path="res://assets/fondos/bano/cubiculos.png" id="1_pk7ub"]
 [ext_resource type="Texture2D" uid="uid://gvwe2iugvvto" path="res://assets/objetos/nivel2/candado.png" id="2_1hkfx"]
 [ext_resource type="Texture2D" uid="uid://djureaij403sy" path="res://assets/objetos/nivel2/llave.png" id="4_v14bf"]
 

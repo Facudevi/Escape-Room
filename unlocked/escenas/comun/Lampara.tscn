@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bdve5vgf8k77b"]
+
+[ext_resource type="Script" uid="uid://b4gaiwhvh51j8" path="res://scripts/comun/lampara.gd" id="1_exlkv"]
+[ext_resource type="Texture2D" uid="uid://buvg6w12qxksx" path="res://assets/objetos/comun/lampara.png" id="2_y8fux"]
+
+[node name="Lampara" type="Node2D" unique_id=337719741]
+script = ExtResource("1_exlkv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1137976674]
+position = Vector2(1063, 78)
+scale = Vector2(0.13411456, 0.1341146)
+texture = ExtResource("2_y8fux")
+
+[node name="botonLampara" type="TextureButton" parent="." unique_id=881989655]
+offset_left = 1039.0
+offset_top = 49.0
+offset_right = 1079.0
+offset_bottom = 90.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="botonLampara" to="." method="_on_boton_lampara_pressed"]

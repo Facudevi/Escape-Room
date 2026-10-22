@@ -1,26 +1,26 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cwmfdkm2yc0ww"]
 
-[ext_resource type="Script" path="res://scripts/nivel3/nivel_3.gd" id="1_nivel3"]
-[ext_resource type="Texture2D" path="res://assets/imagen/patio/patio_techado1.jpeg" id="2_bg1"]
-[ext_resource type="PackedScene" path="res://escenas/personajes/Castelli.tscn" id="3_castelli"]
+[ext_resource type="Script" uid="uid://c37pc8sreehtb" path="res://scripts/niveles/nivel3/nivel_3.gd" id="1_nivel3"]
+[ext_resource type="Texture2D" uid="uid://dabcscrd1hnrg" path="res://assets/fondos/patio/patio_1.jpeg" id="2_bg1"]
+[ext_resource type="PackedScene" uid="uid://c8c80wb6phwa7" path="res://escenas/personajes/Castelli.tscn" id="3_castelli"]
 [ext_resource type="PackedScene" path="res://escenas/niveles/nivel3/FlechaSuelo.tscn" id="4_flecha"]
-[ext_resource type="PackedScene" path="res://escenas/niveles/InventarioUI.tscn" id="5_inv"]
-[ext_resource type="Script" path="res://scripts/inventario_ui.gd" id="6_invscript"]
-[ext_resource type="PackedScene" path="res://escenas/settings/menu_pausa.tscn" id="7_pausa"]
-[ext_resource type="Script" path="res://scripts/nivel3/escala_profundidad.gd" id="8_escala"]
+[ext_resource type="PackedScene" uid="uid://o40760mseohc" path="res://escenas/comun/InventarioUI.tscn" id="5_inv"]
+[ext_resource type="Script" uid="uid://ft8tgxe3gajp" path="res://scripts/comun/inventario_ui.gd" id="6_invscript"]
+[ext_resource type="PackedScene" uid="uid://0bwujfbvoiqr" path="res://escenas/menus/menu_pausa.tscn" id="7_pausa"]
+[ext_resource type="Script" uid="uid://m86qsfafotw8" path="res://scripts/niveles/nivel3/escala_profundidad.gd" id="8_escala"]
 [ext_resource type="PackedScene" path="res://escenas/niveles/nivel3/PapelSuelo.tscn" id="9_papelsuelo"]
-[ext_resource type="Texture2D" path="res://assets/objetos/nivel3/papel_roto_a.png" id="10_papela"]
-[ext_resource type="Texture2D" path="res://assets/objetos/nivel2/candado.png" id="11_candado"]
+[ext_resource type="Texture2D" uid="uid://nvivdv614mkw" path="res://assets/objetos/nivel3/papel_roto_a.png" id="10_papela"]
+[ext_resource type="Texture2D" uid="uid://gvwe2iugvvto" path="res://assets/objetos/nivel2/candado.png" id="11_candado"]
 [ext_resource type="PackedScene" path="res://escenas/niveles/nivel3/VistaImagen.tscn" id="12_vistaimagen"]
-[ext_resource type="Texture2D" path="res://assets/objetos/nivel3/cartelera_aviso.png" id="13_cartelera"]
-[ext_resource type="Texture2D" path="res://assets/objetos/nivel3/marcador_metegol.png" id="14_marcador"]
-[ext_resource type="PackedScene" path="res://escenas/niveles/nivel2/VistaCandado.tscn" id="15_vistacandado"]
-[ext_resource type="Script" path="res://scripts/nivel3/vista_candado_n3.gd" id="16_candadon3"]
+[ext_resource type="Texture2D" uid="uid://cotr7usty817d" path="res://assets/objetos/nivel3/cartelera_aviso.png" id="13_cartelera"]
+[ext_resource type="Texture2D" uid="uid://dgskummewn4fh" path="res://assets/objetos/nivel3/marcador_metegol.png" id="14_marcador"]
+[ext_resource type="PackedScene" uid="uid://deb08bj215dv8" path="res://escenas/niveles/nivel2/VistaCandado.tscn" id="15_vistacandado"]
+[ext_resource type="Script" uid="uid://drob0jhmrl3p" path="res://scripts/niveles/nivel3/vista_candado_n3.gd" id="16_candadon3"]
 [ext_resource type="PackedScene" path="res://escenas/niveles/nivel3/VistaPanel.tscn" id="17_vistapanel"]
-[ext_resource type="Texture2D" path="res://assets/objetos/nivel3/panel_botones.png" id="18_panel"]
-[ext_resource type="PackedScene" path="res://escenas/objetos/lampara.tscn" id="19_lampara"]
-[ext_resource type="PackedScene" path="res://escenas/objetos/vista_papel_lupa.tscn" id="20_lupa"]
-[ext_resource type="Script" path="res://scripts/nivel3/vista_pista_n3.gd" id="21_pista"]
+[ext_resource type="Texture2D" uid="uid://c5pel2664o1yg" path="res://assets/objetos/nivel3/panel_botones.png" id="18_panel"]
+[ext_resource type="PackedScene" uid="uid://bdve5vgf8k77b" path="res://escenas/comun/Lampara.tscn" id="19_lampara"]
+[ext_resource type="PackedScene" uid="uid://oo6itmgfv3ct" path="res://escenas/comun/VistaPapelLupa.tscn" id="20_lupa"]
+[ext_resource type="Script" uid="uid://cy0manwg2sbx6" path="res://scripts/niveles/nivel3/vista_pista_n3.gd" id="21_pista"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lado"]
 size = Vector2(40, 648)
@@ -40,14 +40,14 @@ size = Vector2(46, 56)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_puerta"]
 size = Vector2(130, 131)
 
-[node name="Nivel3" type="Node2D"]
+[node name="Nivel3" type="Node2D" unique_id=123495920]
 process_mode = 3
 script = ExtResource("1_nivel3")
 
-[node name="Mundo" type="CanvasLayer" parent="."]
+[node name="Mundo" type="CanvasLayer" parent="." unique_id=573375642]
 process_mode = 1
 
-[node name="Fondo" type="TextureRect" parent="Mundo"]
+[node name="Fondo" type="TextureRect" parent="Mundo" unique_id=236894092]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -57,216 +57,216 @@ mouse_filter = 2
 texture = ExtResource("2_bg1")
 expand_mode = 1
 
-[node name="Fondo1" type="Node2D" parent="Mundo"]
+[node name="Fondo1" type="Node2D" parent="Mundo" unique_id=220016523]
 
-[node name="Colisiones" type="StaticBody2D" parent="Mundo/Fondo1"]
+[node name="Colisiones" type="StaticBody2D" parent="Mundo/Fondo1" unique_id=977931036]
 
-[node name="Pared" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones"]
+[node name="Pared" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones" unique_id=1965241094]
 polygon = PackedVector2Array(0, -40, 1152, -40, 1152, 436, 0, 436)
 
-[node name="LimiteIzquierdo" type="CollisionShape2D" parent="Mundo/Fondo1/Colisiones"]
+[node name="LimiteIzquierdo" type="CollisionShape2D" parent="Mundo/Fondo1/Colisiones" unique_id=495059640]
 position = Vector2(-20, 324)
 shape = SubResource("RectangleShape2D_lado")
 
-[node name="LimiteDerecho" type="CollisionShape2D" parent="Mundo/Fondo1/Colisiones"]
+[node name="LimiteDerecho" type="CollisionShape2D" parent="Mundo/Fondo1/Colisiones" unique_id=334457552]
 position = Vector2(1172, 324)
 shape = SubResource("RectangleShape2D_lado")
 
-[node name="LimiteInferior" type="CollisionShape2D" parent="Mundo/Fondo1/Colisiones"]
+[node name="LimiteInferior" type="CollisionShape2D" parent="Mundo/Fondo1/Colisiones" unique_id=856574174]
 position = Vector2(576, 672)
 shape = SubResource("RectangleShape2D_bajo")
 
-[node name="PilarIzquierdo" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones"]
+[node name="PilarIzquierdo" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones" unique_id=661483877]
 polygon = PackedVector2Array(380, 430, 442, 430, 442, 448, 380, 448)
 
-[node name="PilarDerecho" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones"]
+[node name="PilarDerecho" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones" unique_id=915235194]
 polygon = PackedVector2Array(815, 430, 915, 430, 915, 442, 815, 442)
 
-[node name="MesaPingPong" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones"]
+[node name="MesaPingPong" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones" unique_id=1746493308]
 polygon = PackedVector2Array(0, 420, 305, 420, 290, 490, 262, 525, 205, 570, 130, 572, 60, 565, 0, 555)
 
-[node name="MesasCentro" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones"]
+[node name="MesasCentro" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones" unique_id=32533341]
 polygon = PackedVector2Array(425, 400, 650, 400, 650, 522, 425, 522)
 
-[node name="MesasDerecha" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones"]
+[node name="MesasDerecha" type="CollisionPolygon2D" parent="Mundo/Fondo1/Colisiones" unique_id=456523413]
 polygon = PackedVector2Array(768, 412, 1152, 412, 1152, 485, 1100, 485, 1092, 528, 860, 528, 860, 515, 768, 515)
 
-[node name="FlechaDerecha" parent="Mundo/Fondo1" instance=ExtResource("4_flecha")]
+[node name="FlechaDerecha" parent="Mundo/Fondo1" unique_id=1434903255 instance=ExtResource("4_flecha")]
 position = Vector2(1088, 604)
 tamano = 92.0
 
-[node name="FlechaAbajo" parent="Mundo/Fondo1" instance=ExtResource("4_flecha")]
+[node name="FlechaAbajo" parent="Mundo/Fondo1" unique_id=1509469689 instance=ExtResource("4_flecha")]
 position = Vector2(576, 588)
 angulo_grados = 90.0
 escala_y = 0.55
 
-[node name="Fondo2" type="Node2D" parent="Mundo"]
-
-[node name="Colisiones" type="StaticBody2D" parent="Mundo/Fondo2"]
-
-[node name="Pared" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones"]
-polygon = PackedVector2Array(0, -40, 1152, -40, 1152, 436, 0, 436)
-
-[node name="LimiteIzquierdo" type="CollisionShape2D" parent="Mundo/Fondo2/Colisiones"]
-position = Vector2(-20, 324)
-shape = SubResource("RectangleShape2D_lado")
-
-[node name="LimiteDerecho" type="CollisionShape2D" parent="Mundo/Fondo2/Colisiones"]
-position = Vector2(1172, 324)
-shape = SubResource("RectangleShape2D_lado")
-
-[node name="LimiteInferior" type="CollisionShape2D" parent="Mundo/Fondo2/Colisiones"]
-position = Vector2(576, 672)
-shape = SubResource("RectangleShape2D_bajo")
-
-[node name="PilarIzquierdo" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones"]
-polygon = PackedVector2Array(380, 430, 442, 430, 442, 448, 380, 448)
-
-[node name="MesaPingPong" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones"]
-polygon = PackedVector2Array(0, 420, 305, 420, 290, 490, 262, 525, 205, 570, 130, 572, 60, 565, 0, 555)
-
-[node name="MesasCentro" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones"]
-polygon = PackedVector2Array(425, 400, 650, 400, 650, 522, 425, 522)
-
-[node name="Metegol" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones"]
-polygon = PackedVector2Array(520, 410, 768, 410, 768, 578, 520, 578)
-
-[node name="MesasDerechaCasilleros" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones"]
-polygon = PackedVector2Array(768, 412, 1152, 412, 1152, 538, 1090, 528, 860, 528, 860, 515, 768, 515)
-
-[node name="FlechaIzquierda" parent="Mundo/Fondo2" instance=ExtResource("4_flecha")]
-position = Vector2(110, 618)
-angulo_grados = 180.0
-tamano = 92.0
-
-[node name="Fondo3" type="Node2D" parent="Mundo"]
-
-[node name="Colisiones" type="StaticBody2D" parent="Mundo/Fondo3"]
-
-[node name="Pared" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones"]
-polygon = PackedVector2Array(0, -40, 1152, -40, 1152, 436, 0, 436)
-
-[node name="LimiteIzquierdo" type="CollisionShape2D" parent="Mundo/Fondo3/Colisiones"]
-position = Vector2(-20, 324)
-shape = SubResource("RectangleShape2D_lado")
-
-[node name="LimiteDerecho" type="CollisionShape2D" parent="Mundo/Fondo3/Colisiones"]
-position = Vector2(1172, 324)
-shape = SubResource("RectangleShape2D_lado")
-
-[node name="LimiteInferior" type="CollisionShape2D" parent="Mundo/Fondo3/Colisiones"]
-position = Vector2(576, 672)
-shape = SubResource("RectangleShape2D_bajo")
-
-[node name="SillasApiladas" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones"]
-polygon = PackedVector2Array(200, 380, 575, 380, 575, 462, 200, 462)
-
-[node name="MesasPingPongIzquierda" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones"]
-polygon = PackedVector2Array(0, 408, 238, 408, 238, 472, 125, 492, 90, 528, 0, 525)
-
-[node name="MesaPingPongFrente" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones"]
-polygon = PackedVector2Array(135, 470, 522, 455, 522, 525, 490, 548, 440, 580, 290, 580, 185, 575, 135, 545)
-
-[node name="ParedDerechaYTachos" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones"]
-polygon = PackedVector2Array(905, 0, 905, 420, 1000, 474, 1004, 533, 1075, 538, 1085, 566, 1152, 568, 1152, 0)
-
-[node name="FlechaVolver" parent="Mundo/Fondo3" instance=ExtResource("4_flecha")]
-position = Vector2(660, 588)
-angulo_grados = 90.0
-escala_y = 0.55
-
-[node name="PapelA" parent="Mundo/Fondo1" instance=ExtResource("9_papelsuelo")]
+[node name="PapelA" parent="Mundo/Fondo1" unique_id=1316994953 instance=ExtResource("9_papelsuelo")]
 position = Vector2(168, 552)
 textura = ExtResource("10_papela")
 angulo_grados = -20.0
 
-[node name="AreaMetegol" type="Area2D" parent="Mundo/Fondo2"]
+[node name="Fondo2" type="Node2D" parent="Mundo" unique_id=1173551338]
+
+[node name="Colisiones" type="StaticBody2D" parent="Mundo/Fondo2" unique_id=909024204]
+
+[node name="Pared" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones" unique_id=757964195]
+polygon = PackedVector2Array(0, -40, 1152, -40, 1152, 436, 0, 436)
+
+[node name="LimiteIzquierdo" type="CollisionShape2D" parent="Mundo/Fondo2/Colisiones" unique_id=687643615]
+position = Vector2(-20, 324)
+shape = SubResource("RectangleShape2D_lado")
+
+[node name="LimiteDerecho" type="CollisionShape2D" parent="Mundo/Fondo2/Colisiones" unique_id=1654386372]
+position = Vector2(1172, 324)
+shape = SubResource("RectangleShape2D_lado")
+
+[node name="LimiteInferior" type="CollisionShape2D" parent="Mundo/Fondo2/Colisiones" unique_id=973261410]
+position = Vector2(576, 672)
+shape = SubResource("RectangleShape2D_bajo")
+
+[node name="PilarIzquierdo" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones" unique_id=64164507]
+polygon = PackedVector2Array(380, 430, 442, 430, 442, 448, 380, 448)
+
+[node name="MesaPingPong" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones" unique_id=1646095242]
+polygon = PackedVector2Array(0, 420, 305, 420, 290, 490, 262, 525, 205, 570, 130, 572, 60, 565, 0, 555)
+
+[node name="MesasCentro" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones" unique_id=2025235003]
+polygon = PackedVector2Array(425, 400, 650, 400, 650, 522, 425, 522)
+
+[node name="Metegol" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones" unique_id=208140373]
+polygon = PackedVector2Array(520, 410, 768, 410, 768, 578, 520, 578)
+
+[node name="MesasDerechaCasilleros" type="CollisionPolygon2D" parent="Mundo/Fondo2/Colisiones" unique_id=1846114986]
+polygon = PackedVector2Array(768, 412, 1152, 412, 1152, 538, 1090, 528, 860, 528, 860, 515, 768, 515)
+
+[node name="FlechaIzquierda" parent="Mundo/Fondo2" unique_id=142978981 instance=ExtResource("4_flecha")]
+position = Vector2(110, 618)
+angulo_grados = 180.0
+tamano = 92.0
+
+[node name="AreaMetegol" type="Area2D" parent="Mundo/Fondo2" unique_id=1428068015]
 position = Vector2(642, 460)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/Fondo2/AreaMetegol"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/Fondo2/AreaMetegol" unique_id=412979335]
 shape = SubResource("RectangleShape2D_metegol")
 
-[node name="AreaCasillero" type="Area2D" parent="Mundo/Fondo2"]
+[node name="AreaCasillero" type="Area2D" parent="Mundo/Fondo2" unique_id=166394776]
 position = Vector2(1007, 410)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/Fondo2/AreaCasillero"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/Fondo2/AreaCasillero" unique_id=1637617361]
 shape = SubResource("RectangleShape2D_casillero")
 
-[node name="SpriteCandado" type="Sprite2D" parent="Mundo/Fondo2"]
+[node name="SpriteCandado" type="Sprite2D" parent="Mundo/Fondo2" unique_id=386317546]
 position = Vector2(1007, 432)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("11_candado")
 
-[node name="Sombra" type="Sprite2D" parent="Mundo/Fondo2/SpriteCandado"]
+[node name="Sombra" type="Sprite2D" parent="Mundo/Fondo2/SpriteCandado" unique_id=629179041]
 modulate = Color(0, 0, 0, 0.35)
 show_behind_parent = true
 position = Vector2(25, 37)
 texture = ExtResource("11_candado")
 
-[node name="AreaCartelera" type="Area2D" parent="Mundo/Fondo3"]
+[node name="Fondo3" type="Node2D" parent="Mundo" unique_id=1245788082]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mundo/Fondo3/AreaCartelera"]
+[node name="Colisiones" type="StaticBody2D" parent="Mundo/Fondo3" unique_id=146432609]
+
+[node name="Pared" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones" unique_id=1907948504]
+polygon = PackedVector2Array(0, -40, 1152, -40, 1152, 436, 0, 436)
+
+[node name="LimiteIzquierdo" type="CollisionShape2D" parent="Mundo/Fondo3/Colisiones" unique_id=425385858]
+position = Vector2(-20, 324)
+shape = SubResource("RectangleShape2D_lado")
+
+[node name="LimiteDerecho" type="CollisionShape2D" parent="Mundo/Fondo3/Colisiones" unique_id=1327516597]
+position = Vector2(1172, 324)
+shape = SubResource("RectangleShape2D_lado")
+
+[node name="LimiteInferior" type="CollisionShape2D" parent="Mundo/Fondo3/Colisiones" unique_id=1746827075]
+position = Vector2(576, 672)
+shape = SubResource("RectangleShape2D_bajo")
+
+[node name="SillasApiladas" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones" unique_id=342790162]
+polygon = PackedVector2Array(200, 380, 575, 380, 575, 462, 200, 462)
+
+[node name="MesasPingPongIzquierda" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones" unique_id=663528373]
+polygon = PackedVector2Array(0, 408, 238, 408, 238, 472, 125, 492, 90, 528, 0, 525)
+
+[node name="MesaPingPongFrente" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones" unique_id=472470791]
+polygon = PackedVector2Array(135, 470, 522, 455, 522, 525, 490, 548, 440, 580, 290, 580, 185, 575, 135, 545)
+
+[node name="ParedDerechaYTachos" type="CollisionPolygon2D" parent="Mundo/Fondo3/Colisiones" unique_id=266739376]
+polygon = PackedVector2Array(905, 0, 905, 420, 1000, 474, 1004, 533, 1075, 538, 1085, 566, 1152, 568, 1152, 0)
+
+[node name="FlechaVolver" parent="Mundo/Fondo3" unique_id=591320986 instance=ExtResource("4_flecha")]
+position = Vector2(660, 588)
+angulo_grados = 90.0
+escala_y = 0.55
+
+[node name="AreaCartelera" type="Area2D" parent="Mundo/Fondo3" unique_id=332326125]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mundo/Fondo3/AreaCartelera" unique_id=955000296]
 polygon = PackedVector2Array(962, 288, 1067, 249, 1067, 419, 962, 398)
 
-[node name="SpritePanel" type="Sprite2D" parent="Mundo/Fondo3"]
+[node name="SpritePanel" type="Sprite2D" parent="Mundo/Fondo3" unique_id=1128875529]
 position = Vector2(723, 371)
 scale = Vector2(0.0657, 0.0657)
 texture = ExtResource("18_panel")
 
-[node name="Sombra" type="Sprite2D" parent="Mundo/Fondo3/SpritePanel"]
+[node name="Sombra" type="Sprite2D" parent="Mundo/Fondo3/SpritePanel" unique_id=1591345718]
 modulate = Color(0, 0, 0, 0.35)
 show_behind_parent = true
 position = Vector2(30, 46)
 texture = ExtResource("18_panel")
 
-[node name="AreaPanel" type="Area2D" parent="Mundo/Fondo3"]
+[node name="AreaPanel" type="Area2D" parent="Mundo/Fondo3" unique_id=1388488789]
 position = Vector2(723, 371)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/Fondo3/AreaPanel"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/Fondo3/AreaPanel" unique_id=1082461863]
 shape = SubResource("RectangleShape2D_panel")
 
-[node name="AreaPuerta" type="Area2D" parent="Mundo/Fondo3"]
+[node name="AreaPuerta" type="Area2D" parent="Mundo/Fondo3" unique_id=158465635]
 position = Vector2(818.5, 376.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/Fondo3/AreaPuerta"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/Fondo3/AreaPuerta" unique_id=1858367293]
 shape = SubResource("RectangleShape2D_puerta")
 
-[node name="Castelli" parent="Mundo" instance=ExtResource("3_castelli")]
+[node name="Castelli" parent="Mundo" unique_id=974951113 instance=ExtResource("3_castelli")]
 position = Vector2(560, 570)
 
-[node name="Lampara" parent="Mundo" instance=ExtResource("19_lampara")]
+[node name="Lampara" parent="Mundo" unique_id=716162722 instance=ExtResource("19_lampara")]
 
-[node name="EscalaProfundidad" type="Node" parent="Mundo" node_paths=PackedStringArray("objetivo")]
+[node name="EscalaProfundidad" type="Node" parent="Mundo" unique_id=778604075 node_paths=PackedStringArray("objetivo")]
 script = ExtResource("8_escala")
 objetivo = NodePath("../Castelli")
 
-[node name="VistaPapel" parent="." instance=ExtResource("12_vistaimagen")]
+[node name="VistaPapel" parent="." unique_id=1316570933 instance=ExtResource("12_vistaimagen")]
 es_papel = true
 
-[node name="VistaCartelera" parent="." instance=ExtResource("12_vistaimagen")]
+[node name="VistaCartelera" parent="." unique_id=877466413 instance=ExtResource("12_vistaimagen")]
 textura = ExtResource("13_cartelera")
 
-[node name="VistaMetegol" parent="." instance=ExtResource("12_vistaimagen")]
+[node name="VistaMetegol" parent="." unique_id=1260763853 instance=ExtResource("12_vistaimagen")]
 textura = ExtResource("14_marcador")
 
-[node name="VistaCandadoCasillero" parent="." instance=ExtResource("15_vistacandado")]
+[node name="VistaCandadoCasillero" parent="." unique_id=1941797787 instance=ExtResource("15_vistacandado")]
 layer = 2
 script = ExtResource("16_candadon3")
 
-[node name="VistaPanel" parent="." instance=ExtResource("17_vistapanel")]
+[node name="VistaPanel" parent="." unique_id=48372153 instance=ExtResource("17_vistapanel")]
 
-[node name="VistaPista" parent="." instance=ExtResource("20_lupa")]
+[node name="VistaPista" parent="." unique_id=978795616 instance=ExtResource("20_lupa")]
 layer = 2
 script = ExtResource("21_pista")
 
-[node name="InventarioUi" parent="." instance=ExtResource("5_inv")]
+[node name="InventarioUi" parent="." unique_id=964148165 instance=ExtResource("5_inv")]
 layer = 3
 script = ExtResource("6_invscript")
 
-[node name="Aviso" type="CanvasLayer" parent="."]
+[node name="Aviso" type="CanvasLayer" parent="." unique_id=1498918504]
 layer = 4
 
-[node name="Fundido" type="ColorRect" parent="Aviso"]
+[node name="Fundido" type="ColorRect" parent="Aviso" unique_id=1600905221]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -275,13 +275,12 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[node name="Mensaje" type="Label" parent="Aviso"]
+[node name="Mensaje" type="Label" parent="Aviso" unique_id=1976619053]
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = 28.0
 offset_bottom = 88.0
 grow_horizontal = 2
-mouse_filter = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
@@ -289,5 +288,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Menu_Pausa" parent="." instance=ExtResource("7_pausa")]
+[node name="Menu_Pausa" parent="." unique_id=1932810110 instance=ExtResource("7_pausa")]
 layer = 10

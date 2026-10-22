@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjjn30s0h1kub"]
 
-[ext_resource type="Script" uid="uid://ijujn2633tuf" path="res://scripts/nivel1/vista_pizarra.gd" id="1_b8dpi"]
-[ext_resource type="Texture2D" uid="uid://cg026j6dsehqy" path="res://assets/imagen/buffet/pizarra.jpeg" id="2_b8dpi"]
+[ext_resource type="Script" uid="uid://ijujn2633tuf" path="res://scripts/niveles/nivel1/vista_pizarra.gd" id="1_b8dpi"]
+[ext_resource type="Texture2D" uid="uid://cg026j6dsehqy" path="res://assets/fondos/buffet/pizarra.jpeg" id="2_b8dpi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gai1"]
 bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://octavpnn0cg"]
 
-[ext_resource type="Texture2D" uid="uid://7ve5bl0mtkn2" path="res://assets/imagen/baño/espejo_sucio.jpg" id="1_76vq8"]
-[ext_resource type="Script" uid="uid://dd5175lkhpube" path="res://scripts/nivel2/vista_espejo.gd" id="1_x0bu5"]
+[ext_resource type="Texture2D" uid="uid://7ve5bl0mtkn2" path="res://assets/fondos/bano/espejo_sucio.jpg" id="1_76vq8"]
+[ext_resource type="Script" uid="uid://dd5175lkhpube" path="res://scripts/niveles/nivel2/vista_espejo.gd" id="1_x0bu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gai1"]
 size = Vector2(425, 246)

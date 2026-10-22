@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b04d1foulacxd"]
 
-[ext_resource type="Script" uid="uid://drvhnsi351xb3" path="res://scripts/nivel1/vista_teclado.gd" id="1_yhncu"]
-[ext_resource type="Texture2D" uid="uid://bqyej7pwsytct" path="res://assets/objetos/teclado_numerico.jpg" id="2_m4oov"]
+[ext_resource type="Script" uid="uid://drvhnsi351xb3" path="res://scripts/niveles/nivel1/vista_teclado.gd" id="1_yhncu"]
+[ext_resource type="Texture2D" uid="uid://bqyej7pwsytct" path="res://assets/objetos/nivel1/teclado_numerico.jpg" id="2_m4oov"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57876"]
 bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)

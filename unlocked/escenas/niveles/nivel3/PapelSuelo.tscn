@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://scripts/nivel3/papel_suelo.gd" id="1_papel"]
+[ext_resource type="Script" path="res://scripts/niveles/nivel3/papel_suelo.gd" id="1_papel"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_papel"]
 size = Vector2(58, 36)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dinjjp53tun1k"]
 
-[ext_resource type="Script" uid="uid://cjty1pu40ccpa" path="res://scripts/nivel1/vista_papel.gd" id="1_p67mj"]
-[ext_resource type="Texture2D" uid="uid://3r6th4443djo" path="res://assets/objetos/nota_acertijo.png" id="2_8hwfr"]
+[ext_resource type="Script" uid="uid://cjty1pu40ccpa" path="res://scripts/niveles/nivel1/vista_papel.gd" id="1_p67mj"]
+[ext_resource type="Texture2D" uid="uid://3r6th4443djo" path="res://assets/objetos/nivel1/nota_acertijo.png" id="2_8hwfr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hwfr"]
 bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)

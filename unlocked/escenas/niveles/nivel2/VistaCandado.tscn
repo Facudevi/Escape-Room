@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://deb08bj215dv8"]
 
-[ext_resource type="Script" uid="uid://bhiqb6nepd0rb" path="res://scripts/nivel2/vista_candado.gd" id="1_74is3"]
+[ext_resource type="Script" uid="uid://bhiqb6nepd0rb" path="res://scripts/niveles/nivel2/vista_candado.gd" id="1_74is3"]
 [ext_resource type="Texture2D" uid="uid://buqlegpckv46d" path="res://assets/objetos/nivel2/candado_zoom.png" id="2_qh3s3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hf46m"]
