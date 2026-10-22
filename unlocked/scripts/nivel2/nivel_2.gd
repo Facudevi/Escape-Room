@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var Nivel2 = $"."
-@onready var menu_pausa = $CanvasLayer2/MenuPausa
+@onready var menu_pausa = $Menu_Pausa/MenuPausa
 @onready var fondo_nivel: TextureRect = $CanvasLayer/TextureRect
 @onready var sprite_candado: Sprite2D = $CanvasLayer/SpriteCandado
 

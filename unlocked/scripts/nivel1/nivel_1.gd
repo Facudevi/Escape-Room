@@ -1,6 +1,6 @@
 extends Node2D
 @onready var Nivel1 = $"."
-@onready var menu_pausa = $CanvasLayer2/MenuPausa
+@onready var menu_pausa = $Menu_Pausa/MenuPausa
 @onready var vista_teclado: CanvasLayer = $VistaTeclado
 # Nodo del fondo principal donde se muestra la imagen del nivel
 @onready var fondo_nivel: TextureRect = $CanvasLayer/TextureRect 
