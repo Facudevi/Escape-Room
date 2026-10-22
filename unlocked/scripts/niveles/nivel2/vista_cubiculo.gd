@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 signal abrir_zoom_candado
+signal aviso_solicitado(texto: String)
 
 @onready var imagen_cubiculo: TextureRect = $ImagenCubiculo
 @onready var sprite_candado: Sprite2D = $SpriteCandado
@@ -64,7 +65,6 @@ func _aplicar_estado_abierto() -> void:
 
 func _on_area_candado_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		print("Tocaste el candado: Abriendo combinación...")
 		abrir_zoom_candado.emit()
 
 
@@ -77,9 +77,9 @@ func _on_area_llave_input_event(_viewport: Node, event: InputEvent, _shape_idx: 
 				llave_tomada = true
 				if area_llave != null:
 					area_llave.visible = false
-				print("¡Llave juntada e ingresada al inventario!")
+				aviso_solicitado.emit("Encontraste una llave. ¿Qué podrá abrir?")
 			else:
-				print("El inventario está lleno.")
+				aviso_solicitado.emit("El inventario está lleno.")
 
 
 func _on_boton_cerrar_pressed() -> void:

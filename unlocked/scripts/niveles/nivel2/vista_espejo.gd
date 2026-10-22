@@ -2,6 +2,7 @@ extends CanvasLayer
 
 
 signal espejo_limpiado_exitosamente
+signal mancha_tocada # nivel_2.gd decide qué hacer según el ítem seleccionado
 
 @onready var imagen_espejo: TextureRect = $ImagenEspejo
 @onready var area_mancha: Area2D = $AreaMancha
@@ -39,19 +40,15 @@ func abrir_vista_espejo(ya_esta_limpio: bool) -> void:
 
 func _on_area_mancha_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if Global.item_seleccionado_idx != -1:
-			var item_actual = Global.inventario[Global.item_seleccionado_idx]
-			
-			if "trapo_humedo" in item_actual or "trapo_mojado" in item_actual:
-				print("¡Limpiaste el espejo con el trapo húmedo!")
-				Global.eliminar_item_seleccionado()
-				
-				imagen_espejo.texture = imagen_espejo_limpio
-				if area_mancha != null:
-					area_mancha.visible = false
-				
-				# Emitimos la señal para que nivel_2.gd cambie el fondo
-				espejo_limpiado_exitosamente.emit()
+		mancha_tocada.emit()
+
+
+# Deja el espejo limpio en el zoom y avisa a nivel_2.gd para que cambie el fondo
+func limpiar() -> void:
+	imagen_espejo.texture = imagen_espejo_limpio
+	if area_mancha != null:
+		area_mancha.visible = false
+	espejo_limpiado_exitosamente.emit()
 
 
 func _on_boton_cerrar_pressed() -> void:
