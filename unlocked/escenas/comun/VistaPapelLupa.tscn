@@ -1,54 +1,109 @@
 [gd_scene format=3 uid="uid://oo6itmgfv3ct"]
 
 [ext_resource type="Script" uid="uid://dd8yd5ck1ji0m" path="res://scripts/comun/vista_papel_lupa.gd" id="1_ukkxl"]
+[ext_resource type="Script" path="res://scripts/comun/hoja_pista.gd" id="2_hoja"]
+[ext_resource type="Texture2D" uid="uid://buvg6w12qxksx" path="res://assets/objetos/comun/lampara.png" id="3_lampara"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukkxl"]
-bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bombilla"]
+atlas = ExtResource("3_lampara")
+region = Rect2(470, 60, 470, 640)
 
 [node name="vistaPapelLupa" type="CanvasLayer" unique_id=1305914553]
 script = ExtResource("1_ukkxl")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=854256287]
+[node name="Oscuro" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 304.0
-offset_top = 182.0
-offset_right = -279.0
-offset_bottom = -190.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+color = Color(0.1059, 0.1451, 0.251, 0.5)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1651114103]
-offset_left = 304.0
-offset_top = 182.0
-offset_right = 874.0
-offset_bottom = 460.0
-
-[node name="Label" type="Label" parent="TextureRect" unique_id=1321964928]
-layout_mode = 1
+[node name="Hoja" type="Panel" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -224.0
-offset_top = -84.5
-offset_right = 244.0
-offset_bottom = 84.5
+offset_left = -300.0
+offset_top = -185.0
+offset_right = 300.0
+offset_bottom = 165.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-autowrap_mode = 2
+rotation = -0.020943952
+theme_type_variation = &"PanelHoja"
+script = ExtResource("2_hoja")
 
-[node name="BotonCerrar" type="Button" parent="TextureRect" unique_id=1534232375]
+[node name="Pista" type="Label" parent="Hoja"]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 19.0
-offset_right = 43.0
-offset_bottom = 45.0
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_ukkxl")
+offset_left = 104.0
+offset_top = 108.0
+offset_right = 570.0
+offset_bottom = 330.0
+mouse_filter = 2
+theme_type_variation = &"TextoPista"
+autowrap_mode = 3
+
+[node name="CintaIzquierda" type="Panel" parent="Hoja"]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -14.0
+offset_right = 62.0
+offset_bottom = 16.0
+mouse_filter = 2
+rotation = -0.6632251
+pivot_offset = Vector2(46, 15)
+theme_type_variation = &"PanelCinta"
+
+[node name="CintaDerecha" type="Panel" parent="Hoja"]
+layout_mode = 0
+offset_left = 538.0
+offset_top = -14.0
+offset_right = 630.0
+offset_bottom = 16.0
+mouse_filter = 2
+rotation = 0.6632251
+pivot_offset = Vector2(46, 15)
+theme_type_variation = &"PanelCinta"
+
+[node name="Encabezado" type="PanelContainer" parent="Hoja"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 28.0
+offset_right = 260.0
+offset_bottom = 86.0
+mouse_filter = 2
+theme_type_variation = &"PanelChip"
+
+[node name="Fila" type="HBoxContainer" parent="Hoja/Encabezado"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Bombilla" type="TextureRect" parent="Hoja/Encabezado/Fila"]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_bombilla")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Titulo" type="Label" parent="Hoja/Encabezado/Fila"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"ChipTitulo"
+text = "PISTA"
+vertical_alignment = 1
+
+[node name="BotonCerrar" type="Button" parent="Hoja"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 24.0
+offset_right = 64.0
+offset_bottom = 74.0
+theme_type_variation = &"BotonCerrar"
 text = "X"
 
-[connection signal="pressed" from="TextureRect/BotonCerrar" to="." method="_on_boton_cerrar_pressed"]
+[connection signal="pressed" from="Hoja/BotonCerrar" to="." method="_on_boton_cerrar_pressed"]

@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://ijujn2633tuf" path="res://scripts/niveles/nivel1/vista_pizarra.gd" id="1_b8dpi"]
 [ext_resource type="Texture2D" uid="uid://cg026j6dsehqy" path="res://assets/fondos/buffet/pizarra.jpeg" id="2_b8dpi"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gai1"]
-bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)
-
 [node name="VistaPizarra" type="CanvasLayer" unique_id=510962975]
 script = ExtResource("1_b8dpi")
 
@@ -25,10 +22,9 @@ expand_mode = 1
 [node name="BotonCerrar" type="Button" parent="." unique_id=1778531061]
 offset_left = 37.0
 offset_top = 27.0
-offset_right = 106.0
+offset_right = 94.0
 offset_bottom = 84.0
-theme_override_font_sizes/font_size = 41
-theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+theme_type_variation = &"BotonCerrar"
 text = "X"
 
 [connection signal="pressed" from="BotonCerrar" to="." method="_on_boton_cerrar_pressed"]

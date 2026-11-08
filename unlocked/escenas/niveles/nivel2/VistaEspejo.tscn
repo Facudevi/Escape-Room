@@ -6,9 +6,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gai1"]
 size = Vector2(425, 246)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0bu5"]
-bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)
-
 [node name="VistaEspejo" type="CanvasLayer" unique_id=339617719]
 script = ExtResource("1_x0bu5")
 
@@ -30,10 +27,9 @@ shape = SubResource("RectangleShape2D_5gai1")
 [node name="BotonCerrar" type="Button" parent="." unique_id=520217535]
 offset_left = 37.0
 offset_top = 27.0
-offset_right = 106.0
+offset_right = 94.0
 offset_bottom = 84.0
-theme_override_font_sizes/font_size = 41
-theme_override_styles/normal = SubResource("StyleBoxFlat_x0bu5")
+theme_type_variation = &"BotonCerrar"
 text = "X"
 
 [connection signal="input_event" from="AreaMancha" to="." method="_on_area_mancha_input_event"]

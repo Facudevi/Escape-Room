@@ -286,7 +286,7 @@ func completar_nivel() -> void:
 	await _animar_fundido(1.0)
 	await get_tree().create_timer(1.5).timeout
 	Global.reiniciar_datos()
-	get_tree().change_scene_to_file("res://escenas/menus/niveles.tscn")
+	FX.cambiar_escena("res://escenas/menus/niveles.tscn")
 
 
 # --- Pistas de la lámpara (según el progreso, de la última etapa a la primera) ---

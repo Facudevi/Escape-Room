@@ -365,7 +365,7 @@ func completar_nivel_2() -> void:
 	mostrar_aviso("¡NIVEL 2 COMPLETADO!", 2.0)
 	await get_tree().create_timer(1.5).timeout
 	Global.reiniciar_datos()
-	get_tree().change_scene_to_file("res://escenas/menus/niveles.tscn")
+	FX.cambiar_escena("res://escenas/menus/niveles.tscn")
 
 
 # --- PISTAS DE LA LÁMPARA (según el progreso, de la última etapa a la primera) ---

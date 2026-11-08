@@ -3,9 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://baesl2mjvvrev" path="res://assets/fondos/menu/inicio.jpeg" id="1_3at8s"]
 [ext_resource type="Script" uid="uid://dwyoqnq2r5qyv" path="res://scripts/menus/menu.gd" id="1_di3mt"]
 [ext_resource type="Texture2D" uid="uid://bkiq52sfplgvp" path="res://assets/personajes/castelli/idle.png" id="3_txgnh"]
+[ext_resource type="PackedScene" path="res://escenas/comun/LogoUnlocked.tscn" id="4_logo"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gai1"]
-bg_color = Color(0.16, 0.15159999, 0.1488, 1)
+[sub_resource type="Gradient" id="Gradient_vineta"]
+offsets = PackedFloat32Array(0.55, 1)
+colors = PackedColorArray(0.1059, 0.1451, 0.251, 0, 0.1059, 0.1451, 0.251, 0.42)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vineta"]
+gradient = SubResource("Gradient_vineta")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [node name="Menu" type="Control" unique_id=1627536483]
 layout_mode = 3
@@ -34,37 +42,45 @@ grow_vertical = 2
 texture = ExtResource("1_3at8s")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2042536776]
+[node name="Vineta" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.499
-anchor_top = 0.19900002
-anchor_right = 0.499
-anchor_bottom = 0.46300003
-offset_left = -110.84802
-offset_top = 0.04798889
-offset_right = 110.15198
-offset_bottom = -0.024017334
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 12
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_vineta")
+expand_mode = 1
+
+[node name="Logo" parent="." instance=ExtResource("4_logo")]
+layout_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2042536776]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 148.0
+offset_right = 120.0
+offset_bottom = 380.0
+grow_horizontal = 2
+theme_override_constants/separation = 14
 
 [node name="Jugar" type="Button" parent="VBoxContainer" unique_id=529821591]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+theme_type_variation = &"BotonMenuSol"
 text = "JUGAR"
 
 [node name="Opciones" type="Button" parent="VBoxContainer" unique_id=1948326189]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+theme_type_variation = &"BotonMenu"
 text = "OPCIONES"
 
 [node name="Salir" type="Button" parent="VBoxContainer" unique_id=2101700535]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+theme_type_variation = &"BotonMenuRojo"
 text = "SALIR"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=558172527]

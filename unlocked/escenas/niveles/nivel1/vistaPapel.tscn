@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://cjty1pu40ccpa" path="res://scripts/niveles/nivel1/vista_papel.gd" id="1_p67mj"]
 [ext_resource type="Texture2D" uid="uid://3r6th4443djo" path="res://assets/objetos/nivel1/nota_acertijo.png" id="2_8hwfr"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hwfr"]
-bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)
-
 [node name="VistaPapel" type="CanvasLayer" unique_id=228344290]
 script = ExtResource("1_p67mj")
 
@@ -35,10 +32,9 @@ expand_mode = 1
 [node name="BotonCerrar" type="Button" parent="." unique_id=1776404094]
 offset_left = 37.0
 offset_top = 27.0
-offset_right = 106.0
+offset_right = 94.0
 offset_bottom = 84.0
-theme_override_font_sizes/font_size = 41
-theme_override_styles/normal = SubResource("StyleBoxFlat_8hwfr")
+theme_type_variation = &"BotonCerrar"
 text = "X"
 
 [connection signal="pressed" from="BotonCerrar" to="." method="_on_boton_cerrar_pressed"]

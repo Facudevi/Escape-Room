@@ -4,8 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://baesl2mjvvrev" path="res://assets/fondos/menu/inicio.jpeg" id="2_migfo"]
 [ext_resource type="Texture2D" uid="uid://bkiq52sfplgvp" path="res://assets/personajes/castelli/idle.png" id="3_migfo"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gai1"]
-bg_color = Color(0.16, 0.15159999, 0.1488, 1)
+[sub_resource type="Gradient" id="Gradient_vineta"]
+offsets = PackedFloat32Array(0.55, 1)
+colors = PackedColorArray(0.1059, 0.1451, 0.251, 0, 0.1059, 0.1451, 0.251, 0.42)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vineta"]
+gradient = SubResource("Gradient_vineta")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [node name="Opciones" type="Control" unique_id=1627536483]
 layout_mode = 3
@@ -34,31 +41,37 @@ grow_vertical = 2
 texture = ExtResource("2_migfo")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2042536776]
+[node name="Vineta" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.499
-anchor_top = 0.261
-anchor_right = 0.499
-anchor_bottom = 0.43100002
-offset_left = -113.84802
-offset_top = -0.12800598
-offset_right = 112.15198
-offset_bottom = -0.2880249
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 12
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_vineta")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2042536776]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = 169.0
+offset_right = 140.0
+offset_bottom = 330.0
+grow_horizontal = 2
+theme_override_constants/separation = 14
 
 [node name="Como_Jugar" type="Button" parent="VBoxContainer" unique_id=1948326189]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+theme_type_variation = &"BotonMenu"
 text = "CÓMO JUGAR"
 
 [node name="Volver" type="Button" parent="VBoxContainer" unique_id=2101700535]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+theme_type_variation = &"BotonMenuCrema"
 text = "VOLVER"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1742169627]

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dira8d43lsbjn"]
 
+[ext_resource type="Script" path="res://scripts/comun/aviso_ui.gd" id="aviso_ui_gd"]
+
 [ext_resource type="Script" uid="uid://dnke4oa033os6" path="res://scripts/niveles/nivel2/nivel_2.gd" id="1_014pr"]
 [ext_resource type="Texture2D" uid="uid://brrw142kpsdi6" path="res://assets/fondos/bano/bano_inicial.png" id="2_r861x"]
 [ext_resource type="PackedScene" uid="uid://ytirfiey2x6f" path="res://escenas/comun/Piso.tscn" id="3_uiv56"]
@@ -167,17 +169,20 @@ visible = false
 layer = 4
 
 [node name="Mensaje" type="Label" parent="Aviso"]
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 28.0
-offset_bottom = 88.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 26.0
+offset_right = 400.0
+offset_bottom = 90.0
 grow_horizontal = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 28
+mouse_filter = 2
+theme_type_variation = &"Aviso"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+script = ExtResource("aviso_ui_gd")
 
 [node name="CanvasLayer2" parent="." unique_id=1355991338 instance=ExtResource("11_4ahab")]
 layer = 10

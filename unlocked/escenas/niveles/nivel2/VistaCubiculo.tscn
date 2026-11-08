@@ -8,9 +8,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukucv"]
 size = Vector2(45.5, 62.5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v14bf"]
-bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gai1"]
 size = Vector2(56, 22)
 
@@ -42,10 +39,9 @@ shape = SubResource("RectangleShape2D_ukucv")
 [node name="BotonCerrar" type="Button" parent="." unique_id=1146270579]
 offset_left = 37.0
 offset_top = 27.0
-offset_right = 106.0
+offset_right = 94.0
 offset_bottom = 84.0
-theme_override_font_sizes/font_size = 41
-theme_override_styles/normal = SubResource("StyleBoxFlat_v14bf")
+theme_type_variation = &"BotonCerrar"
 text = "X"
 
 [node name="AreaLlave" type="Area2D" parent="." unique_id=1945892704]

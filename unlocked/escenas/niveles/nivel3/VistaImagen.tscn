@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" path="res://scripts/niveles/nivel3/vista_imagen.gd" id="1_vista"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cerrar"]
-bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)
-
 [node name="VistaImagen" type="CanvasLayer"]
 layer = 2
 script = ExtResource("1_vista")
@@ -27,8 +24,7 @@ stretch_mode = 5
 [node name="BotonCerrar" type="Button" parent="."]
 offset_left = 37.0
 offset_top = 27.0
-offset_right = 106.0
+offset_right = 94.0
 offset_bottom = 84.0
-theme_override_font_sizes/font_size = 41
-theme_override_styles/normal = SubResource("StyleBoxFlat_cerrar")
+theme_type_variation = &"BotonCerrar"
 text = "X"

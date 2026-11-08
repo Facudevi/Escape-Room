@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var boton_cerrar: Button = $PanelPapel/BotonCerrar # Ajusta si tu botón se llama distinto o está en otra ruta
+@onready var boton_cerrar: Button = $Hoja/BotonCerrar # Ajusta si tu botón se llama distinto o está en otra ruta
 
 func _ready() -> void:
 	visible = false

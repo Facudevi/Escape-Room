@@ -1,0 +1,408 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/menus/como_jugar.gd" id="1_cj"]
+[ext_resource type="Texture2D" uid="uid://dabcscrd1hnrg" path="res://assets/fondos/patio/patio_1.jpeg" id="2_bg"]
+[ext_resource type="PackedScene" uid="uid://c8c80wb6phwa7" path="res://escenas/personajes/Castelli.tscn" id="3_castelli"]
+[ext_resource type="PackedScene" path="res://escenas/niveles/nivel3/PapelSuelo.tscn" id="4_papel"]
+[ext_resource type="Texture2D" path="res://assets/objetos/nivel2/llave.png" id="5_llave"]
+[ext_resource type="PackedScene" uid="uid://bdve5vgf8k77b" path="res://escenas/comun/Lampara.tscn" id="6_lampara"]
+[ext_resource type="Script" uid="uid://m86qsfafotw8" path="res://scripts/niveles/nivel3/escala_profundidad.gd" id="7_escala"]
+[ext_resource type="Script" path="res://scripts/menus/marca_tutorial.gd" id="8_marca"]
+[ext_resource type="Script" path="res://scripts/menus/flecha_guia.gd" id="9_flecha"]
+[ext_resource type="PackedScene" uid="uid://oo6itmgfv3ct" path="res://escenas/comun/VistaPapelLupa.tscn" id="10_lupa"]
+[ext_resource type="Script" path="res://scripts/menus/vista_nota_tutorial.gd" id="11_nota"]
+[ext_resource type="Script" uid="uid://cy0manwg2sbx6" path="res://scripts/niveles/nivel3/vista_pista_n3.gd" id="12_pista"]
+[ext_resource type="PackedScene" uid="uid://o40760mseohc" path="res://escenas/comun/InventarioUI.tscn" id="13_inv"]
+[ext_resource type="Script" uid="uid://ft8tgxe3gajp" path="res://scripts/comun/inventario_ui.gd" id="14_invscript"]
+[ext_resource type="Script" path="res://scripts/comun/aviso_ui.gd" id="15_aviso"]
+[ext_resource type="Texture2D" uid="uid://bkiq52sfplgvp" path="res://assets/personajes/castelli/idle.png" id="16_idle"]
+[ext_resource type="Texture2D" path="res://assets/ui/estrella.svg" id="17_estrella"]
+[ext_resource type="PackedScene" uid="uid://0bwujfbvoiqr" path="res://escenas/menus/menu_pausa.tscn" id="18_pausa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lado"]
+size = Vector2(40, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bajo"]
+size = Vector2(1152, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_baldosa"]
+size = Vector2(124, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mesa"]
+size = Vector2(300, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_armario"]
+size = Vector2(96, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cara"]
+atlas = ExtResource("16_idle")
+region = Rect2(70, 0, 230, 230)
+
+[node name="ComoJugar" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_cj")
+
+[node name="Mundo" type="CanvasLayer" parent="."]
+process_mode = 1
+
+[node name="Fondo" type="TextureRect" parent="Mundo"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+
+[node name="Colisiones" type="StaticBody2D" parent="Mundo"]
+
+[node name="Pared" type="CollisionPolygon2D" parent="Mundo/Colisiones"]
+polygon = PackedVector2Array(0, -40, 1152, -40, 1152, 450, 0, 451)
+
+[node name="LimiteIzquierdo" type="CollisionShape2D" parent="Mundo/Colisiones"]
+position = Vector2(-20, 324)
+shape = SubResource("RectangleShape2D_lado")
+
+[node name="LimiteDerecho" type="CollisionShape2D" parent="Mundo/Colisiones"]
+position = Vector2(1172, 324)
+shape = SubResource("RectangleShape2D_lado")
+
+[node name="LimiteInferior" type="CollisionShape2D" parent="Mundo/Colisiones"]
+position = Vector2(576, 693)
+shape = SubResource("RectangleShape2D_bajo")
+
+[node name="PilarIzquierdo" type="CollisionPolygon2D" parent="Mundo/Colisiones"]
+position = Vector2(1, 9)
+polygon = PackedVector2Array(380, 430, 442, 430, 442, 448, 380, 448)
+
+[node name="PilarDerecho" type="CollisionPolygon2D" parent="Mundo/Colisiones"]
+polygon = PackedVector2Array(815, 430, 915, 430, 915, 442, 815, 442)
+
+[node name="MesaPingPong" type="CollisionPolygon2D" parent="Mundo/Colisiones"]
+polygon = PackedVector2Array(0, 420, 305, 420, 289, 496, 256, 525, 195, 559, 148, 586, 120, 578, 59, 572, 0, 566)
+
+[node name="MesasCentro" type="CollisionPolygon2D" parent="Mundo/Colisiones"]
+polygon = PackedVector2Array(425, 400, 650, 400, 648, 534, 425, 534)
+
+[node name="MesasDerecha" type="CollisionPolygon2D" parent="Mundo/Colisiones"]
+polygon = PackedVector2Array(771, 426, 1152, 412, 1152, 492, 1096, 501, 1088, 546, 875, 544, 859, 531, 807, 531, 773, 497)
+
+[node name="Baldosa" type="Area2D" parent="Mundo"]
+position = Vector2(800, 598)
+script = ExtResource("8_marca")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/Baldosa"]
+shape = SubResource("RectangleShape2D_baldosa")
+
+[node name="AreaMesa" type="Area2D" parent="Mundo"]
+position = Vector2(150, 515)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/AreaMesa"]
+shape = SubResource("RectangleShape2D_mesa")
+
+[node name="AreaArmario" type="Area2D" parent="Mundo"]
+position = Vector2(183, 356)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/AreaArmario"]
+shape = SubResource("RectangleShape2D_armario")
+
+[node name="Llave" parent="Mundo" instance=ExtResource("4_papel")]
+position = Vector2(470, 598)
+textura = ExtResource("5_llave")
+tamano = 64.0
+
+[node name="Castelli" parent="Mundo" instance=ExtResource("3_castelli")]
+position = Vector2(560, 570)
+
+[node name="Lampara" parent="Mundo" instance=ExtResource("6_lampara")]
+
+[node name="FlechaGuia" type="Node2D" parent="Mundo"]
+script = ExtResource("9_flecha")
+
+[node name="EscalaProfundidad" type="Node" parent="Mundo" node_paths=PackedStringArray("objetivo")]
+script = ExtResource("7_escala")
+objetivo = NodePath("../Castelli")
+
+[node name="VistaPapel" parent="." instance=ExtResource("10_lupa")]
+layer = 2
+script = ExtResource("11_nota")
+
+[node name="VistaPista" parent="." instance=ExtResource("10_lupa")]
+layer = 2
+script = ExtResource("12_pista")
+
+[node name="InventarioUi" parent="." instance=ExtResource("13_inv")]
+layer = 3
+script = ExtResource("14_invscript")
+
+[node name="Aviso" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="Mensaje" type="Label" parent="Aviso"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 26.0
+offset_right = 400.0
+offset_bottom = 90.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_type_variation = &"Aviso"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("15_aviso")
+
+[node name="Guia" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Tarjeta" type="PanelContainer" parent="Guia"]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -346.0
+offset_top = 150.0
+offset_right = -16.0
+offset_bottom = 380.0
+grow_horizontal = 0
+theme_type_variation = &"TarjetaGuia"
+
+[node name="Caja" type="VBoxContainer" parent="Guia/Tarjeta"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Fila" type="HBoxContainer" parent="Guia/Tarjeta/Caja"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Avatar" type="Panel" parent="Guia/Tarjeta/Caja/Fila"]
+clip_children = 2
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_type_variation = &"PanelAvatar"
+
+[node name="Cara" type="TextureRect" parent="Guia/Tarjeta/Caja/Fila/Avatar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = 3.0
+offset_right = 6.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_cara")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GuiaTitulo" type="Label" parent="Guia/Tarjeta/Caja/Fila"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"GuiaTitulo"
+text = "Caminá"
+vertical_alignment = 1
+
+[node name="GuiaNumero" type="Label" parent="Guia/Tarjeta/Caja/Fila"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"GuiaNum"
+text = "1/7"
+vertical_alignment = 1
+
+[node name="GuiaTexto" type="Label" parent="Guia/Tarjeta/Caja"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(294, 62)
+layout_mode = 2
+theme_type_variation = &"GuiaTexto"
+text = "Usá las teclas para llegar a la baldosa amarilla."
+autowrap_mode = 3
+
+[node name="Teclas" type="HBoxContainer" parent="Guia/Tarjeta/Caja"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Puntos" type="HBoxContainer" parent="Guia/Tarjeta/Caja"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="P1" type="Panel" parent="Guia/Tarjeta/Caja/Puntos"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Punto"
+
+[node name="P2" type="Panel" parent="Guia/Tarjeta/Caja/Puntos"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Punto"
+
+[node name="P3" type="Panel" parent="Guia/Tarjeta/Caja/Puntos"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Punto"
+
+[node name="P4" type="Panel" parent="Guia/Tarjeta/Caja/Puntos"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Punto"
+
+[node name="P5" type="Panel" parent="Guia/Tarjeta/Caja/Puntos"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Punto"
+
+[node name="P6" type="Panel" parent="Guia/Tarjeta/Caja/Puntos"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Punto"
+
+[node name="P7" type="Panel" parent="Guia/Tarjeta/Caja/Puntos"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Punto"
+
+[node name="Botones" type="HBoxContainer" parent="Guia/Tarjeta/Caja"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BotonSaltar" type="Button" parent="Guia/Tarjeta/Caja/Botones"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"BotonPildora"
+text = "Saltar paso"
+
+[node name="BotonVolver" type="Button" parent="Guia/Tarjeta/Caja/Botones"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"BotonPildora"
+text = "Volver"
+
+[node name="Sello" type="PanelContainer" parent="Guia"]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -270.0
+offset_top = 98.0
+offset_right = -150.0
+offset_bottom = 144.0
+grow_horizontal = 0
+mouse_filter = 2
+rotation = -0.1396
+theme_type_variation = &"PanelSello"
+
+[node name="Texto" type="Label" parent="Guia/Sello"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"SelloTexto"
+text = "¡Bien!"
+horizontal_alignment = 1
+
+[node name="Fin" type="CanvasLayer" parent="."]
+layer = 6
+visible = false
+
+[node name="Velo" type="ColorRect" parent="Fin"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1059, 0.1451, 0.251, 0.6)
+
+[node name="Centro" type="CenterContainer" parent="Fin"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Tarjeta" type="PanelContainer" parent="Fin/Centro"]
+layout_mode = 2
+theme_type_variation = &"TarjetaGuia"
+
+[node name="Caja" type="VBoxContainer" parent="Fin/Centro/Tarjeta"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Estrellas" type="HBoxContainer" parent="Fin/Centro/Tarjeta/Caja"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="E1" type="TextureRect" parent="Fin/Centro/Tarjeta/Caja/Estrellas"]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+texture = ExtResource("17_estrella")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="E2" type="TextureRect" parent="Fin/Centro/Tarjeta/Caja/Estrellas"]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+texture = ExtResource("17_estrella")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="E3" type="TextureRect" parent="Fin/Centro/Tarjeta/Caja/Estrellas"]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+texture = ExtResource("17_estrella")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Titulo" type="Label" parent="Fin/Centro/Tarjeta/Caja"]
+layout_mode = 2
+theme_type_variation = &"FinTitulo"
+text = "¡Listo para escapar!"
+horizontal_alignment = 1
+
+[node name="Texto" type="Label" parent="Fin/Centro/Tarjeta/Caja"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+theme_type_variation = &"FinTexto"
+text = "Ya sabés caminar, revisar, recoger, usar, leer, pedir pistas y pausar. Lo demás lo vas a descubrir en cada nivel."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Botones" type="HBoxContainer" parent="Fin/Centro/Tarjeta/Caja"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="BotonRepetir" type="Button" parent="Fin/Centro/Tarjeta/Caja/Botones"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"BotonMenu"
+text = "REPETIR"
+
+[node name="BotonJugar" type="Button" parent="Fin/Centro/Tarjeta/Caja/Botones"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"BotonMenuSol"
+text = "A JUGAR"
+
+[node name="Menu_Pausa" parent="." instance=ExtResource("18_pausa")]
+layer = 10
+
+[node name="MenuPausa" parent="Menu_Pausa" index="0"]
+escena_salida = "res://escenas/menus/opciones.tscn"

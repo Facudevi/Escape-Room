@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cwmfdkm2yc0ww"]
 
+[ext_resource type="Script" path="res://scripts/comun/aviso_ui.gd" id="aviso_ui_gd"]
+
 [ext_resource type="Script" uid="uid://c37pc8sreehtb" path="res://scripts/niveles/nivel3/nivel_3.gd" id="1_nivel3"]
 [ext_resource type="Texture2D" uid="uid://dabcscrd1hnrg" path="res://assets/fondos/patio/patio_1.jpeg" id="2_bg1"]
 [ext_resource type="PackedScene" uid="uid://c8c80wb6phwa7" path="res://escenas/personajes/Castelli.tscn" id="3_castelli"]
@@ -280,17 +282,20 @@ mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [node name="Mensaje" type="Label" parent="Aviso" unique_id=1976619053]
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 28.0
-offset_bottom = 88.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 26.0
+offset_right = 400.0
+offset_bottom = 90.0
 grow_horizontal = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 28
+mouse_filter = 2
+theme_type_variation = &"Aviso"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+script = ExtResource("aviso_ui_gd")
 
 [node name="Menu_Pausa" parent="." unique_id=1932810110 instance=ExtResource("7_pausa")]
 layer = 10

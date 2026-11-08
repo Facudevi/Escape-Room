@@ -1,0 +1,70 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/comun/logo_unlocked.gd" id="1_logo"]
+[ext_resource type="Texture2D" path="res://assets/ui/candado_arco.svg" id="2_arco"]
+[ext_resource type="Texture2D" path="res://assets/ui/candado_cuerpo.svg" id="3_cuerpo"]
+
+[node name="LogoUnlocked" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -330.0
+offset_top = 10.0
+offset_right = 330.0
+offset_bottom = 135.0
+grow_horizontal = 2
+mouse_filter = 2
+script = ExtResource("1_logo")
+
+[node name="Fila" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Parte1" type="Label" parent="Fila"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"LogoLetra"
+text = "UNL"
+
+[node name="Candado" type="Control" parent="Fila"]
+custom_minimum_size = Vector2(76, 96)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Arco" type="TextureRect" parent="Fila/Candado"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_arco")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Cuerpo" type="TextureRect" parent="Fila/Candado"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_cuerpo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Parte2" type="Label" parent="Fila"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"LogoLetraSol"
+text = "CKED"

@@ -3,9 +3,7 @@
 [ext_resource type="Script" uid="uid://bn32mllwedrrk" path="res://scripts/menus/niveles.gd" id="1_4lp1o"]
 [ext_resource type="Texture2D" uid="uid://baesl2mjvvrev" path="res://assets/fondos/menu/inicio.jpeg" id="2_6wupo"]
 [ext_resource type="Texture2D" uid="uid://bkiq52sfplgvp" path="res://assets/personajes/castelli/idle.png" id="3_6wupo"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gai1"]
-bg_color = Color(0.16, 0.15159999, 0.1488, 1)
+[ext_resource type="Texture2D" path="res://assets/ui/llave.svg" id="4_llave"]
 
 [node name="Niveles" type="Control" unique_id=1627536483]
 layout_mode = 3
@@ -35,47 +33,261 @@ grow_vertical = 2
 texture = ExtResource("2_6wupo")
 expand_mode = 1
 
+[node name="Oscurecer" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.1059, 0.1451, 0.251, 0.34)
+
 [node name="Nivel1" type="Button" parent="." unique_id=529821591]
 layout_mode = 0
-offset_left = 170.0
-offset_top = 146.0
-offset_right = 523.0
-offset_bottom = 215.0
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+offset_left = 170
+offset_top = 146
+offset_right = 523
+offset_bottom = 215
+theme_type_variation = &"BotonMenu"
+
+[node name="Contenido" type="Control" parent="Nivel1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Icono" type="Panel" parent="Nivel1/Contenido"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 58.0
+offset_bottom = 51.0
+mouse_filter = 2
+theme_type_variation = &"PanelIcono"
+
+[node name="Llave" type="TextureRect" parent="Nivel1/Contenido/Icono"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_llave")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Titulo" type="Label" parent="Nivel1/Contenido"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = -1.0
+offset_right = 335.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_type_variation = &"TituloPlaca"
+theme_override_font_sizes/font_size = 32
 text = "NIVEL 1"
+vertical_alignment = 1
+
+[node name="Subtitulo" type="Label" parent="Nivel1/Contenido"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 33.0
+offset_right = 335.0
+offset_bottom = 56.0
+mouse_filter = 2
+theme_type_variation = &"SubtituloPlaca"
+text = "EL BUFFET"
 
 [node name="Nivel2" type="Button" parent="." unique_id=609526211]
 layout_mode = 0
-offset_left = 624.0
-offset_top = 146.0
-offset_right = 977.0
-offset_bottom = 215.0
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+offset_left = 624
+offset_top = 146
+offset_right = 977
+offset_bottom = 215
+theme_type_variation = &"BotonMenu"
+
+[node name="Contenido" type="Control" parent="Nivel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Icono" type="Panel" parent="Nivel2/Contenido"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 58.0
+offset_bottom = 51.0
+mouse_filter = 2
+theme_type_variation = &"PanelIcono"
+
+[node name="Llave" type="TextureRect" parent="Nivel2/Contenido/Icono"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_llave")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Titulo" type="Label" parent="Nivel2/Contenido"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = -1.0
+offset_right = 335.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_type_variation = &"TituloPlaca"
+theme_override_font_sizes/font_size = 32
 text = "NIVEL 2"
+vertical_alignment = 1
+
+[node name="Subtitulo" type="Label" parent="Nivel2/Contenido"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 33.0
+offset_right = 335.0
+offset_bottom = 56.0
+mouse_filter = 2
+theme_type_variation = &"SubtituloPlaca"
+text = "EL BAÑO"
 
 [node name="Nivel3" type="Button" parent="." unique_id=1948326189]
 layout_mode = 0
-offset_left = 170.0
-offset_top = 238.0
-offset_right = 523.0
-offset_bottom = 307.0
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
-text = "NIVEL 3
-"
+offset_left = 170
+offset_top = 238
+offset_right = 523
+offset_bottom = 307
+theme_type_variation = &"BotonMenu"
+
+[node name="Contenido" type="Control" parent="Nivel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Icono" type="Panel" parent="Nivel3/Contenido"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 58.0
+offset_bottom = 51.0
+mouse_filter = 2
+theme_type_variation = &"PanelIcono"
+
+[node name="Llave" type="TextureRect" parent="Nivel3/Contenido/Icono"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_llave")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Titulo" type="Label" parent="Nivel3/Contenido"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = -1.0
+offset_right = 335.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_type_variation = &"TituloPlaca"
+theme_override_font_sizes/font_size = 32
+text = "NIVEL 3"
+vertical_alignment = 1
+
+[node name="Subtitulo" type="Label" parent="Nivel3/Contenido"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 33.0
+offset_right = 335.0
+offset_bottom = 56.0
+mouse_filter = 2
+theme_type_variation = &"SubtituloPlaca"
+text = "EL PATIO"
 
 [node name="Nivel4" type="Button" parent="." unique_id=2036774043]
 layout_mode = 0
-offset_left = 624.0
-offset_top = 238.0
-offset_right = 977.0
-offset_bottom = 307.0
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
-text = "NIVEL 4
-"
+offset_left = 624
+offset_top = 238
+offset_right = 977
+offset_bottom = 307
+theme_type_variation = &"BotonMenu"
+
+[node name="Contenido" type="Control" parent="Nivel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Icono" type="Panel" parent="Nivel4/Contenido"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 58.0
+offset_bottom = 51.0
+mouse_filter = 2
+theme_type_variation = &"PanelIcono"
+
+[node name="Llave" type="TextureRect" parent="Nivel4/Contenido/Icono"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_llave")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Titulo" type="Label" parent="Nivel4/Contenido"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 7.0
+offset_right = 335.0
+offset_bottom = 51.0
+mouse_filter = 2
+theme_type_variation = &"TituloPlaca"
+theme_override_font_sizes/font_size = 32
+text = "NIVEL 4"
+vertical_alignment = 1
 
 [node name="Volver" type="Button" parent="." unique_id=739544997]
 layout_mode = 0
@@ -83,8 +295,7 @@ offset_left = 427.0
 offset_top = 42.0
 offset_right = 724.0
 offset_bottom = 111.0
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_5gai1")
+theme_type_variation = &"BotonMenuCrema"
 text = "VOLVER"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=38849228]

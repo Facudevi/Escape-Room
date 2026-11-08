@@ -17,11 +17,16 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 [autoload]
 
 Global="*uid://dirxqtjjcf3ix"
+FX="*res://scripts/autoload/fx.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[gui]
+
+theme/custom="res://tema/tema_unlocked.tres"
 
 [input]
 

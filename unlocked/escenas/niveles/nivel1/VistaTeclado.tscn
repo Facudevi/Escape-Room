@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://drvhnsi351xb3" path="res://scripts/niveles/nivel1/vista_teclado.gd" id="1_yhncu"]
 [ext_resource type="Texture2D" uid="uid://bqyej7pwsytct" path="res://assets/objetos/nivel1/teclado_numerico.jpg" id="2_m4oov"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57876"]
-bg_color = Color(0.72893375, 2.1418184e-06, 3.85046e-07, 1)
-
 [node name="VistaTeclado" type="CanvasLayer" unique_id=1408255511]
 script = ExtResource("1_yhncu")
 
@@ -38,10 +35,9 @@ vertical_alignment = 1
 [node name="BotonCerrar" type="Button" parent="." unique_id=1472490541]
 offset_left = 37.0
 offset_top = 27.0
-offset_right = 106.0
+offset_right = 94.0
 offset_bottom = 84.0
-theme_override_font_sizes/font_size = 41
-theme_override_styles/normal = SubResource("StyleBoxFlat_57876")
+theme_type_variation = &"BotonCerrar"
 text = "X"
 
 [node name="ContenedorBotones" type="Control" parent="." unique_id=1543931552]
