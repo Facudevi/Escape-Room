@@ -31,6 +31,10 @@ var ingresados: Array[String] = []
 var bloqueado: bool = false
 var resuelto: bool = false
 
+# El nivel lo activa cuando el jugador ya armó la nota completa.
+# Mientras sea false, la secuencia correcta se toma como incorrecta
+var clave_habilitada: bool = false
+
 
 func _ready() -> void:
 	hide()
@@ -93,7 +97,7 @@ func _on_boton(color: String) -> void:
 	if ingresados.size() < SECUENCIA.size():
 		return
 	bloqueado = true
-	if ingresados == SECUENCIA:
+	if clave_habilitada and ingresados == SECUENCIA:
 		resuelto = true
 		for led in leds:
 			_pintar(led, COLOR_OK)

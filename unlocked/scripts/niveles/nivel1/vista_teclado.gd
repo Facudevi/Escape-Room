@@ -11,6 +11,10 @@ signal codigo_correcto_ingresado
 var codigo_ingresado: String = ""
 var bloqueado: bool = false # Evita escribir mientras se muestra CORRECTO / INCORRECTO
 
+# El nivel lo activa cuando el jugador ya recogió la nota y vio el pizarrón.
+# Mientras sea false, el código se puede escribir pero nunca se acepta
+var clave_habilitada: bool = false
+
 func _ready() -> void:
 	hide()
 	limpiar_pantalla()
@@ -46,7 +50,7 @@ func _on_boton_verde_pressed() -> void:
 	if bloqueado:
 		return
 		
-	if codigo_ingresado == codigo_correcto:
+	if clave_habilitada and codigo_ingresado == codigo_correcto:
 		pantalla.text = "CORRECTO"
 		bloqueado = true
 		# Emitimos la señal

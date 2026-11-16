@@ -1,5 +1,7 @@
 extends Node2D
 
+const PANTALLA_VICTORIA := preload("res://escenas/comun/PantallaVictoria.tscn")
+
 @onready var Nivel1 = $"."
 @onready var menu_pausa = $CanvasLayer2/MenuPausa
 @onready var vista_teclado: CanvasLayer = $VistaTeclado
@@ -29,6 +31,8 @@ const DECORATIVOS: Dictionary = {
 var puerta_abierta: bool = false
 var aviso_puerta_dado: bool = false
 var caja_usada: bool = false
+var nota_recogida: bool = false # La caja soltó la nota
+var pizarra_vista: bool = false # Se abrió el pizarrón con los precios
 var completando: bool = false
 
 # Avisos en pantalla: si hay una vista abierta el aviso espera a que se cierre
@@ -165,6 +169,8 @@ func _on_area_pizarra_input_event(viewport: Node, event: InputEvent, shape_idx: 
 		if vista_pizarra != null:
 			# Se abre primero la vista para que el aviso espere a que se cierre
 			vista_pizarra.abrir_pizarra()
+			pizarra_vista = true
+			_actualizar_clave_teclado()
 		else:
 			print("Error: La variable vista_pizarra no está asignada en el Inspector")
 			
@@ -191,9 +197,17 @@ func _on_area_maquina_input_event(viewport: Node, event: InputEvent, shape_idx: 
 			_consumir_item_seleccionado()
 			caja_usada = true
 			Global.agregar_objeto(icono_papel)
+			nota_recogida = true
+			_actualizar_clave_teclado()
 			mostrar_aviso("La moneda cae y la caja suelta un papel. Hacé doble clic en él para leerlo.", 4.0)
 		else:
 			mostrar_aviso("Eso no entra en la ranura.")
+
+
+# El teclado acepta el código solo si el jugador ya tiene la nota y vio el pizarrón
+func _actualizar_clave_teclado() -> void:
+	if vista_teclado != null:
+		vista_teclado.clave_habilitada = nota_recogida and pizarra_vista
 
 
 func _on_area_teclado_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -316,7 +330,8 @@ func completar_juego() -> void:
 		return
 	completando = true
 	castelli.process_mode = Node.PROCESS_MODE_DISABLED
-	mostrar_aviso("¡NIVEL 1 COMPLETADO!", 2.0)
-	await get_tree().create_timer(1.5).timeout
-	Global.reiniciar_datos()
-	FX.cambiar_escena("res://escenas/menus/niveles.tscn")
+	# Se libera el nivel 2 y se muestra la pantalla ganadora (continuar o volver al menú)
+	Global.registrar_nivel_completado(1)
+	var pantalla: CanvasLayer = PANTALLA_VICTORIA.instantiate()
+	add_child(pantalla)
+	pantalla.mostrar(1)

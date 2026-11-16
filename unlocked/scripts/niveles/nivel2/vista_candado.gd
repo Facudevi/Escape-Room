@@ -5,6 +5,10 @@ signal candado_desbloqueado_exitosamente
 const CODIGO_CORRECTO: Array[int] = [1, 9, 8, 4]
 var digitos_actuales: Array[int] = [0, 0, 0, 0]
 
+# El nivel lo activa cuando el espejo ya está limpio (y se vio la clave).
+# Mientras sea false, el candado se puede girar pero nunca se abre
+var clave_habilitada: bool = false
+
 # Nodos hijos dentro de TextureRect (según la captura)
 @onready var labels_digitos: Array[Label] = [
 	$TextureRect/Digito1,
@@ -57,7 +61,7 @@ func _actualizar_pantalla() -> void:
 
 
 func _verificar_codigo() -> void:
-	if digitos_actuales == CODIGO_CORRECTO:
+	if clave_habilitada and digitos_actuales == CODIGO_CORRECTO:
 		print("¡CÓDIGO CORRECTO INGRESADO EN EL CANDADO!")
 		candado_desbloqueado_exitosamente.emit()
 		visible = false # Se cierra la vista del candado y queda en la VistaCubiculo de atrás

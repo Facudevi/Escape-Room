@@ -10,6 +10,7 @@ const TEX_FONDOS: Array[Texture2D] = [
 ]
 const TEX_FONDO_3_ABIERTO: Texture2D = preload("res://assets/fondos/patio/patio_3_abierta.png")
 
+const PANTALLA_VICTORIA := preload("res://escenas/comun/PantallaVictoria.tscn")
 const PAPEL_SUELO := preload("res://escenas/niveles/nivel3/PapelSuelo.tscn")
 const ICONO_PAPEL_A := "res://assets/objetos/nivel3/papel_roto_a.png"
 const ICONO_PAPEL_B := "res://assets/objetos/nivel3/papel_roto_b.png"
@@ -47,6 +48,7 @@ const ESCALA_FONDOS: Array = [
 
 var fondo_actual: int = 0
 var cambiando: bool = false
+var nivel_completado: bool = false
 var puerta_abierta: bool = false
 var casillero_abierto: bool = false
 var panel_resuelto: bool = false
@@ -56,6 +58,7 @@ var leyo_cartelera: bool = false
 var leyo_metegol: bool = false
 var intento_casillero: bool = false
 var abrio_panel: bool = false
+var nota_armada: bool = false # Las dos mitades del papel ya están unidas
 var tween_mensaje: Tween
 
 
@@ -93,6 +96,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func toggle_pause() -> void:
+	# Con la pantalla ganadora abierta no se puede abrir la pausa encima
+	if nivel_completado:
+		return
 	get_tree().paused = !get_tree().paused
 	menu_pausa.visible = get_tree().paused
 
@@ -201,11 +207,13 @@ func _on_papel_b_clic(papel: Node) -> void:
 
 func _on_metegol_clic() -> void:
 	leyo_metegol = true
+	_actualizar_claves()
 	vista_metegol.abrir()
 
 
 func _on_cartelera_clic() -> void:
 	leyo_cartelera = true
+	_actualizar_claves()
 	vista_cartelera.abrir()
 
 
@@ -239,7 +247,16 @@ func _revisar_papeles() -> void:
 	Global.inventario.remove_at(maxi(ia, ib))
 	Global.inventario.remove_at(mini(ia, ib))
 	Global.agregar_objeto(ICONO_PAPEL_COMPLETO)
+	nota_armada = true
+	_actualizar_claves()
 	mostrar_aviso("¡Las dos mitades encajan! Hacé doble clic en el papel para leerlo.", 4.0)
+
+
+# Las claves solo funcionan si el jugador ya investigó lo necesario:
+# candado del casillero -> cartelera + metegol; panel de colores -> nota armada
+func _actualizar_claves() -> void:
+	vista_candado.clave_habilitada = leyo_cartelera and leyo_metegol
+	vista_panel.clave_habilitada = nota_armada
 
 
 func _indice_en_inventario(fragmento: String) -> int:
@@ -276,17 +293,17 @@ func _on_puerta_clic() -> void:
 		mostrar_aviso("La puerta está trabada. El panel de al lado pide una secuencia de colores.", 3.5)
 
 
-# Igual que en los niveles 1 y 2: se limpian los datos globales y se vuelve a la selección de niveles
+# Igual que en los niveles 1 y 2: se libera el siguiente nivel y se muestra la pantalla ganadora
 func completar_nivel() -> void:
 	if cambiando:
 		return
 	cambiando = true
+	nivel_completado = true
 	castelli.process_mode = Node.PROCESS_MODE_DISABLED
-	mostrar_aviso("¡NIVEL 3 COMPLETADO!", 2.0)
-	await _animar_fundido(1.0)
-	await get_tree().create_timer(1.5).timeout
-	Global.reiniciar_datos()
-	FX.cambiar_escena("res://escenas/menus/niveles.tscn")
+	Global.registrar_nivel_completado(3)
+	var pantalla: CanvasLayer = PANTALLA_VICTORIA.instantiate()
+	add_child(pantalla)
+	pantalla.mostrar(3)
 
 
 # --- Pistas de la lámpara (según el progreso, de la última etapa a la primera) ---

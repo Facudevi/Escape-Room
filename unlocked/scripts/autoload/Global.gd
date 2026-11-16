@@ -11,6 +11,18 @@ func _process(delta: float) -> void:
 # Señal que avisa a la UI que el inventario se actualizó
 signal inventario_actualizado
 
+# Progreso de niveles: último nivel completado (0 = ninguno). Vive solo en memoria,
+# así que arranca en 0 cada vez que se abre el juego. reiniciar_datos() NO lo toca.
+var nivel_maximo_completado: int = 0
+
+# El nivel 1 siempre está disponible; completar el nivel N libera el N+1
+func esta_desbloqueado(nivel: int) -> bool:
+	return nivel <= nivel_maximo_completado + 1
+
+# Rejugar un nivel anterior nunca baja el progreso
+func registrar_nivel_completado(nivel: int) -> void:
+	nivel_maximo_completado = maxi(nivel_maximo_completado, nivel)
+
 # Variables globales para guardar el avance
 var pizarra_resuelta: bool = false
 var codigo_ingresado: String = ""

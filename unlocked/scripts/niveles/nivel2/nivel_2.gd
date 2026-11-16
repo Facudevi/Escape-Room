@@ -1,5 +1,7 @@
 extends Node2D
 
+const PANTALLA_VICTORIA := preload("res://escenas/comun/PantallaVictoria.tscn")
+
 @onready var Nivel2 = $"."
 @onready var menu_pausa = $CanvasLayer2/MenuPausa
 @onready var fondo_nivel: TextureRect = $CanvasLayer/TextureRect
@@ -87,6 +89,9 @@ func _ready() -> void:
 
 
 func toggle_pause():
+	# Con la pantalla ganadora abierta no se puede abrir la pausa encima
+	if completando:
+		return
 	get_tree().paused = !get_tree().paused
 	if menu_pausa != null:
 		menu_pausa.visible = get_tree().paused
@@ -288,6 +293,8 @@ func _on_mancha_tocada() -> void:
 
 func _on_espejo_limpiado() -> void:
 	espejo_limpio = true
+	if vista_candado != null:
+		vista_candado.clave_habilitada = true
 	_actualizar_fondo()
 
 
@@ -362,10 +369,11 @@ func completar_nivel_2() -> void:
 		return
 	completando = true
 	castelli.process_mode = Node.PROCESS_MODE_DISABLED
-	mostrar_aviso("¡NIVEL 2 COMPLETADO!", 2.0)
-	await get_tree().create_timer(1.5).timeout
-	Global.reiniciar_datos()
-	FX.cambiar_escena("res://escenas/menus/niveles.tscn")
+	# Se libera el nivel 3 y se muestra la pantalla ganadora (continuar o volver al menú)
+	Global.registrar_nivel_completado(2)
+	var pantalla: CanvasLayer = PANTALLA_VICTORIA.instantiate()
+	add_child(pantalla)
+	pantalla.mostrar(2)
 
 
 # --- PISTAS DE LA LÁMPARA (según el progreso, de la última etapa a la primera) ---

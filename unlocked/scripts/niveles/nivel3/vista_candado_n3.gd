@@ -6,6 +6,10 @@ signal candado_desbloqueado
 const CODIGO_CORRECTO: Array[int] = [7, 3, 2, 5]
 var digitos_actuales: Array[int] = [0, 0, 0, 0]
 
+# El nivel lo activa cuando el jugador ya investigó la cartelera y el metegol.
+# Mientras sea false, el candado se puede girar pero nunca se abre
+var clave_habilitada: bool = false
+
 @onready var labels_digitos: Array[Label] = [
 	$TextureRect/Digito1,
 	$TextureRect/Digito2,
@@ -33,7 +37,7 @@ func abrir_vista() -> void:
 func _cambiar_digito(posicion: int, cambio: int) -> void:
 	digitos_actuales[posicion] = posmod(digitos_actuales[posicion] + cambio, 10)
 	_actualizar_pantalla()
-	if digitos_actuales == CODIGO_CORRECTO:
+	if clave_habilitada and digitos_actuales == CODIGO_CORRECTO:
 		visible = false
 		candado_desbloqueado.emit()
 

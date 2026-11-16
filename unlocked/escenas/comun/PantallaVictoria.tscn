@@ -1,0 +1,98 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/comun/pantalla_victoria.gd" id="1_victoria"]
+
+[node name="PantallaVictoria" type="CanvasLayer"]
+process_mode = 3
+layer = 60
+visible = false
+script = ExtResource("1_victoria")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"PanelOscuro"
+
+[node name="Marco" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = -190.0
+offset_right = 242.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"PanelMarco"
+
+[node name="Repisa" type="Panel" parent="Marco"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -212.0
+offset_top = -4.0
+offset_right = 212.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"PanelRepisa"
+
+[node name="Pizarra" type="Panel" parent="Marco"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = -14.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"PanelPizarra"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Marco/Pizarra"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 20.0
+offset_right = -32.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Titulo" type="Label" parent="Marco/Pizarra/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"TituloPizarra"
+text = "¡NIVEL COMPLETADO!"
+horizontal_alignment = 1
+
+[node name="Tiza" type="ColorRect" parent="Marco/Pizarra/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+mouse_filter = 2
+color = Color(1, 0.9529, 0.8392, 0.7)
+
+[node name="Continuar" type="Button" parent="Marco/Pizarra/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"BotonMenuSol"
+text = "CONTINUAR"
+
+[node name="MenuNiveles" type="Button" parent="Marco/Pizarra/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"BotonMenuCrema"
+text = "MENÚ DE NIVELES"
+
+[connection signal="pressed" from="Marco/Pizarra/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Marco/Pizarra/VBoxContainer/MenuNiveles" to="." method="_on_menu_niveles_pressed"]
