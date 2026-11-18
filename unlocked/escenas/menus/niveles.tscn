@@ -280,14 +280,25 @@ stretch_mode = 5
 [node name="Titulo" type="Label" parent="Nivel4/Contenido"]
 layout_mode = 0
 offset_left = 76.0
-offset_top = 7.0
+offset_top = -1.0
 offset_right = 335.0
-offset_bottom = 51.0
+offset_bottom = 43.0
 mouse_filter = 2
 theme_type_variation = &"TituloPlaca"
 theme_override_font_sizes/font_size = 32
 text = "NIVEL 4"
 vertical_alignment = 1
+
+[node name="Subtitulo" type="Label" parent="Nivel4/Contenido"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 33.0
+offset_right = 335.0
+offset_bottom = 56.0
+mouse_filter = 2
+theme_type_variation = &"SubtituloPlaca"
+theme_override_font_sizes/font_size = 19
+text = "PRÓXIMAMENTE..."
 
 [node name="Volver" type="Button" parent="." unique_id=739544997]
 layout_mode = 0
